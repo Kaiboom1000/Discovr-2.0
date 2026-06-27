@@ -1,163 +1,68 @@
 # 06 — Feed and Discovery Engine
 
-The feed and discovery engine are the heart of Discovr.
+The feed and discovery engine are the core systems of Discovr.
 
-Everything else supports this system. Posts, profiles, projects, communities, topics, analytics, messaging, moderation, and monetization all become more valuable when the platform can reliably introduce the right content to the right people.
+The product promise depends on this system being real, measurable, and trustworthy. Discovr should not describe discovery as vague algorithmic magic. The platform needs defined rules for eligibility, classification, audience selection, feed inventory, ranking, staged testing, expansion, analytics, quality controls, and creator feedback.
 
-Discovr’s core promise depends on this chapter:
-
-> Every eligible post receives a real opportunity to be discovered by a relevant audience.
-
-That promise requires a system, not a vibe. The platform needs rules for eligibility, classification, audience selection, feed inventory, ranking, testing, expansion, analytics, spam prevention, and creator feedback.
-
-The discovery engine should not be framed as mysterious algorithm magic. It should be designed as a measurable product system.
+This chapter defines the first version of that system in formal product and engineering terms. It avoids founder-specific examples and should be treated as the foundation for later ranking, data, and infrastructure specifications.
 
 ---
 
-# The central problem
+# Core promise
 
-Most feeds are good at distributing content that already has evidence.
+Every eligible post should receive a meaningful opportunity to be discovered by a relevant audience.
 
-A creator with followers creates early engagement. A post with early engagement becomes easier to recommend. A creator with a history of successful posts receives more confidence. A trend with known performance becomes safer to distribute.
+This does not mean every post receives equal distribution. It does not mean every post receives broad reach. It means the system creates a first test before final reach is determined.
 
-This is efficient, but it creates cold-start unfairness.
+The platform should separate first opportunity from final reach. First opportunity is the initial test. Final reach is the result of performance, relevance, viewer response, and system confidence.
 
-New creators and niche posts often fail before they are properly tested. The platform does not always know who should see the post, so it shows it to too few people or the wrong people. The post produces weak signals, and weak signals reduce future reach.
-
-Discovr should solve this by explicitly separating first opportunity from final reach.
-
-The system should guarantee a meaningful initial test for eligible content, then let measured response determine expansion.
+This distinction protects creators and viewers at the same time.
 
 ---
 
-# Core discovery model
+# Discovery lifecycle
 
-The discovery engine should operate in stages.
+A post should move through a defined lifecycle.
 
-A simplified lifecycle:
+The content is created. The system verifies basic eligibility. The content is classified by format, topic, language, project or community context, and quality indicators. The system selects a relevant initial audience. The post receives a controlled first test. The system evaluates response quality. The post either stops expanding, remains in a narrow audience, or expands into additional distribution waves. The creator receives understandable feedback. The post remains available through profile, search, communities, projects, and long-tail recommendation where appropriate.
 
-1. Post is created.
-2. Post passes basic eligibility checks.
-3. Post is classified by content, topic, format, language, and safety risk.
-4. System selects an initial relevant audience.
-5. Post receives a first discovery test.
-6. System measures meaningful signals.
-7. Post either stops, holds, or expands.
-8. Strong posts receive additional distribution waves.
-9. Creator receives analytics and status feedback.
-10. Post remains discoverable through profile, search, communities, and long-tail recommendation.
-
-This model makes the promise concrete.
-
-A post does not need followers before being tested.
-
-A post does need eligibility and relevance before being distributed.
-
-A post does not receive infinite reach.
-
-A post does receive a real first chance.
+This lifecycle makes discovery operational. It prevents the platform from claiming fairness without defining how fairness is produced.
 
 ---
 
 # Eligibility
 
-Not every post should receive the same initial distribution.
+Eligibility determines whether content enters the first-test system.
 
-Eligibility protects the platform from spam, abuse, unsafe content, and low-quality manipulation.
+Eligibility is not the same as quality. A post can be eligible and still perform poorly. Eligibility only confirms that the post can receive an initial test.
 
-Eligibility checks may include:
+Eligibility checks should include account state, upload validity, content availability, processing state, rate limits, duplicate patterns, link risk, and whether the post contains enough information to classify.
 
-- Account exists and is active
-- Email or account verification where required
-- Account is not restricted
-- User has not exceeded rate limits
-- Media processed successfully
-- Content is not already removed
-- Content passes basic safety checks
-- Content is not obvious duplicate spam
-- Links are not obviously malicious
-- Post has enough content to classify
-- User is not blocked from the target audience
-
-Eligibility is not the same as quality ranking. A post can be eligible and still perform poorly. Eligibility only decides whether the post deserves a real first test.
-
-The platform should avoid using eligibility as a hidden excuse to suppress normal content. If a post is ineligible, creators should receive a clear reason where possible.
+If content is not eligible, the user should receive a clear reason where possible.
 
 ---
 
-# Content classification
+# Classification
 
-Before the platform can choose an audience, it must understand the post.
+Audience selection requires understanding the content.
 
-Classification should identify:
+Classification should identify format, topics, language, media type, project context, community context, creator history, and quality indicators. It can use captions, user-selected topics, inferred topics, media metadata, profile context, community context, and project context.
 
-- Format: text, image, video, carousel, project update, community post
-- Topics: music, robotics, design, coding, photography, comedy, etc.
-- Subtopics: drums, VEX IQ, UI design, street photography, indie film, etc.
-- Language
-- Media type
-- Creator intent where inferable
-- Project attachment
-- Community attachment
-- Safety risk
-- Spam risk
-- Originality or duplication risk later
+User-entered metadata should help the system but should not be trusted blindly. If declared topics repeatedly fail to match audience response, confidence in that metadata should decline.
 
-Classification can use multiple inputs:
-
-- Caption text
-- User-selected topics
-- System-inferred topics
-- Media metadata
-- Visual analysis later
-- Audio/video analysis later
-- Creator history
-- Community context
-- Project context
-
-User-entered topics are useful, but they should not be trusted blindly. The system should compare tags against actual user response and content signals.
-
-If a creator tags a drum cover as “startup” to chase reach, the audience will likely respond poorly. The system should learn that the tag was weak or manipulative.
+Classification should improve over time, but the first version should remain explainable.
 
 ---
 
 # Audience selection
 
-A fair test requires a relevant audience.
+A fair first test requires a relevant audience.
 
-Random reach is not fair reach. Showing a robotics post to random comedy viewers does not produce useful signal. Showing a niche music post to users who never engage with music does not test the post properly.
+Random exposure is not fair exposure. It creates poor viewer experience and misleading creator feedback. The initial audience should be selected from users with demonstrated or declared interest in related categories.
 
-The initial audience should be selected from users who have demonstrated interest in related areas.
+Relevant signals may include onboarding interests, follows, saves, shares, comments, viewing behavior, search behavior, community membership, project participation, profile interests, language preference, location where appropriate, and negative preference signals.
 
-Audience signals include:
-
-- Onboarding interests
-- Followed creators
-- Joined communities
-- Saved posts
-- Watched posts
-- Commented posts
-- Shared posts
-- Search history where appropriate
-- Project follows
-- Project applications
-- Skills and profile interests
-- Negative feedback history
-- Language preference
-- Location where appropriate
-
-The audience should be large enough to produce useful signal but small enough to protect feed quality.
-
-The exact size should be configurable and tested.
-
-A possible early model:
-
-- Small test: 25-100 impressions
-- Medium test: 100-500 impressions
-- Strong expansion: 500-5,000 impressions
-- Larger expansion: based on performance and audience size
-
-These numbers are placeholders, not final rules. The important idea is staged testing.
+The audience should be large enough to produce useful data and small enough to protect feed quality. Exact numbers should be configurable and tested.
 
 ---
 
@@ -165,376 +70,103 @@ These numbers are placeholders, not final rules. The important idea is staged te
 
 The feed has limited space.
 
-Every feed impression used for a new post is an impression not used for followed content, proven content, ads, project updates, or community posts. The feed engine must reserve discovery inventory intentionally.
+Every impression assigned to a discovery test is an impression not assigned to followed content, proven recommendations, community content, project updates, or sponsored content. Feed inventory must therefore be allocated deliberately.
 
-Possible feed inventory categories:
+The feed should contain a controlled mix of followed content, personalized recommendations, first-test content, project updates, community content, and later sponsored content. The exact proportions should be configurable.
 
-- Followed content
-- Recommended proven content
-- New discovery tests
-- Project updates
-- Community content
-- Search/trend influenced content
-- Sponsored content later
-
-A healthy feed might allocate a percentage of impressions to discovery tests.
-
-Example:
-
-- 40% personalized recommended content
-- 25% followed/community content
-- 20% discovery test content
-- 10% project/community modules
-- 5% experiments or sponsored content later
-
-These are not final numbers. The allocation should change based on user behavior, feed maturity, and product goals.
-
-If discovery inventory is too low, Discovr becomes a normal platform.
-
-If discovery inventory is too high, feed quality may drop.
+If first-test inventory is too low, Discovr becomes a standard feed. If first-test inventory is too high, viewer relevance may decline.
 
 ---
 
 # Ranking signals
 
-The feed should rank content using multiple signals.
+Ranking should use multiple signal types.
 
-Positive signals:
+Positive signals include saves, shares, comments, profile visits, follows after exposure, project applications, community joins, completion behavior, return visits, and repeated interest.
 
-- Watch time
-- Read time
-- Completion rate
-- Rewatch or reread behavior
-- Likes
-- Saves
-- Shares
-- Comments
-- Meaningful replies
-- Profile visits
-- Follows after impression
-- Project follows
-- Project applications
-- Community joins
-- Search clicks
-- Return visits
+Negative signals include fast skips, hides, disinterest actions, low completion, repeated ignores, and quality indicators.
 
-Negative signals:
+Context signals include topic match, user interest, account history, creator trust, relationship to creator, community membership, project relationship, language, freshness, media type, and device or network constraints where relevant.
 
-- Fast skips
-- Hides
-- Not interested actions
-- Reports
-- Blocks
-- Low completion
-- Repeated ignores
-- Comment toxicity
-- Spam indicators
-- Duplicate content indicators
-
-Context signals:
-
-- User interests
-- Time since posting
-- Topic match
-- Creator trust
-- Account age
-- Relationship to creator
-- Community membership
-- Project relationship
-- Language
-- Location where appropriate
-- Device/network constraints for media-heavy posts
-
-Ranking should not use one metric blindly. A post with many comments may be valuable or controversial. A post with many likes may be shallow. A post with fewer likes but high saves and profile visits may be strong.
-
-Discovr should treat meaningful follow-through as especially important.
+No single metric should dominate the system.
 
 ---
 
-# Meaningful discovery signals
+# Meaningful discovery
 
 Discovr should distinguish attention from discovery.
 
-Attention means the user saw or reacted to something.
+Attention means a user saw or reacted to something. Discovery means the user found something worth acting on or remembering.
 
-Discovery means the user found something worth acting on or remembering.
+Strong discovery signals include saving, sharing, following after exposure, visiting a profile, joining a community, applying to a project, starting an approved conversation, returning to related content, or searching for related topics later.
 
-Strong discovery signals include:
-
-- Save after viewing
-- Follow after viewing
-- Profile visit after viewing
-- Message request after viewing
-- Project application after viewing
-- Community join after viewing
-- Share after viewing
-- Return to creator later
-- Explore related posts
-
-These signals should carry more weight than raw impressions.
-
-A post that generates 200 impressions and 20 saves may be more valuable than a post that generates 2,000 impressions and 5 likes.
-
-The system should be designed to notice that difference.
+These signals should matter because they indicate durable value. The platform should avoid treating raw impressions as the main measure of success.
 
 ---
 
 # Expansion waves
 
-Posts should expand in waves.
+Distribution should happen in stages.
 
-Wave-based distribution allows the platform to test, measure, and scale reach without dumping unproven content into the entire feed.
+A basic wave model includes creation, eligibility, classification, first test, signal evaluation, second wave, adjacent audience test, broader recommendation, and long-tail discovery.
 
-Possible stages:
+The first test validates audience fit. The second wave validates whether the signal remains strong at a larger scale. Adjacent audience tests determine whether the post can travel beyond its initial category. Broad recommendation should be reserved for content with strong evidence. Long-tail discovery keeps useful content available through search, profiles, projects, communities, and future recommendation.
 
-## Stage 0 — Created
-
-The post exists but has not been distributed.
-
-## Stage 1 — Eligibility and classification
-
-The system checks whether the post is safe and classifiable.
-
-## Stage 2 — Initial audience test
-
-The post is shown to a small relevant audience.
-
-## Stage 3 — Signal evaluation
-
-The system measures response quality.
-
-## Stage 4 — Second wave
-
-If signals are strong, the post expands to a larger related audience.
-
-## Stage 5 — Adjacent audience testing
-
-If the post has broader potential, it is tested with adjacent interests.
-
-## Stage 6 — Broad recommendation
-
-High-performing posts can enter broader recommendation pools.
-
-## Stage 7 — Long-tail discovery
-
-The post remains discoverable through search, profile, communities, and future recommendations.
-
-Not every post needs every stage.
-
-Niche posts may perform well within a narrow audience and not need broad expansion. That should not be considered failure.
+Not every post should become broad. A narrow post that performs well within a narrow audience can still be successful.
 
 ---
 
 # Creator feedback
 
-The discovery engine must communicate enough to build trust.
+Creator feedback is part of the discovery engine.
 
-Creators should be able to see:
+The system should show whether content was eligible, whether a first test occurred, approximate reach, strong signal categories, weak signal categories, expansion state, and long-tail availability.
 
-- Whether the post was eligible
-- Whether the post received an initial test
-- Approximate initial reach
-- Strong signals
-- Weak signals
-- Expansion status
-- Long-tail status
+The product should not expose exact ranking formulas. The correct approach is principled transparency: enough information to build trust, not enough detail to compromise the system.
 
-Possible status language:
-
-- “Your post is being prepared for discovery.”
-- “Your post is being tested with a relevant audience.”
-- “Your post completed its first discovery test.”
-- “Your post is expanding to a wider audience.”
-- “Your post performed best with music and live performance audiences.”
-- “Your post did not expand further, but it remains available on your profile and in search.”
-
-The product should not expose exact ranking formulas. Too much transparency creates gaming. But the creator should understand the process.
-
-Silence is the enemy. A creator should not be left wondering whether the post failed or was never tested.
+The creator should understand the difference between a post that failed after a test and a post that was not eligible for testing.
 
 ---
 
-# Cold-start creators
+# Cold-start handling
 
-Cold-start creators are the users Discovr most needs to help.
+Cold-start users should receive opportunity with appropriate caution.
 
-A creator with no followers should still be able to receive a relevant first audience.
+A new account has less trust history, but lack of history should not mean lack of opportunity. The system can use content classification, declared interests, profile context, community context, project context, and early account behavior to form an initial test.
 
-The system can use:
+New accounts may receive smaller tests, stricter rate limits, and more conservative expansion thresholds until trust grows. That is different from making them invisible.
 
-- Post content
-- Topics
-- Onboarding interests
-- Profile interests
-- Early account behavior
-- Community selection
-- Project attachment
-- Similar content patterns
-
-The creator’s lack of history should reduce confidence, not eliminate opportunity.
-
-New creators may receive smaller initial tests until trust grows, but the test should still be real.
-
-This is the difference between caution and invisibility.
+The system should protect feed quality while still allowing new creators to generate evidence.
 
 ---
 
-# Feed quality protection
+# Project and community discovery
 
-The discovery promise cannot destroy the viewer experience.
+Projects should be discoverable objects. A project can appear in Discover, search, feed modules, profile sections, community pages, and suggested participation surfaces. Project ranking should consider topic relevance, role relevance, project completeness, update activity, application activity, member trust, community context, and user interest.
 
-Viewers are not test subjects for irrelevant content. If the feed becomes noisy, the product fails.
+Communities should be recommended based on relevance and activity, not only size. Community ranking should consider topic match, active participation, member growth, post quality, moderator activity, project connections, and user interest overlap.
 
-Protection mechanisms:
-
-- Relevance filtering
-- Small initial test sizes
-- Negative feedback controls
-- Spam scoring
-- Account trust scoring
-- Topic confidence scoring
-- Distribution caps
-- Quality thresholds
-- Duplicate detection
-- Report-triggered pauses
-
-The feed should be generous to creators but respectful of viewers.
-
-A good system creates opportunity without making users feel like they are doing unpaid moderation work.
+Existing scale should matter, but it should not be the only path to visibility.
 
 ---
 
-# Spam and abuse prevention
+# Personalization and exploration
 
-Guaranteed initial reach creates incentives for abuse.
+Personalization should improve relevance without trapping users into repetitive loops.
 
-Bad actors may try to create many accounts, upload duplicate content, tag unrelated topics, use clickbait, send spam links, manipulate engagement, or exploit message requests.
+The system should learn from explicit interests, follows, saves, shares, comments, search, communities, projects, negative preferences, and return behavior. It should also include controlled exploration so users encounter adjacent topics, new creators, rising projects, and relevant communities outside their immediate history.
 
-Anti-abuse signals:
-
-- New account velocity
-- Posting frequency
-- Duplicate media
-- Duplicate captions
-- Link patterns
-- Report rate
-- Block rate
-- Follow/unfollow patterns
-- Engagement from suspicious accounts
-- Topic mismatch
-- Device/IP risk where appropriate
-- Message request volume
-
-The system should not permanently punish users for one weak signal, but repeated abuse patterns should reduce distribution.
-
-Spam prevention is not separate from the discovery engine. It protects the promise from being exploited.
+The feed should avoid becoming too narrow. Discovery requires some surprise, but surprise must be controlled by relevance.
 
 ---
 
-# Projects in discovery
+# Measurement
 
-Projects should be discoverable objects, not just profile attachments.
+The discovery engine should be measured through mission-specific metrics.
 
-A project can appear in:
+Important metrics include eligible posts tested, time to first test, median first-test reach, expansion rate, save rate during first test, follow rate after discovery exposure, project application rate, community join rate, negative feedback rate, new creator return rate, viewer retention, and creator trust.
 
-- Discover modules
-- Feed cards
-- Search results
-- Profile sections
-- Community pages
-- Suggested collaboration modules
-
-Project ranking signals include:
-
-- Project follows
-- Applications
-- Update engagement
-- Role relevance
-- Member credibility
-- Community relevance
-- Completion of project profile
-- Recent activity
-- Report rate
-
-A project looking for a drummer should be shown to people with music, drums, band, live performance, and collaboration signals.
-
-A robotics project looking for programmers should be shown to users with robotics, coding, engineering, or VEX interests.
-
-Project discovery is one of the clearest ways Discovr can turn attention into action.
-
----
-
-# Communities in discovery
-
-Communities create context and retention.
-
-Community ranking signals include:
-
-- Member growth
-- Active members
-- Post quality
-- Report rate
-- Topic match
-- Moderator activity
-- Project connections
-- User interest overlap
-
-Communities should be recommended to users who are likely to participate, not only lurk.
-
-A community with fewer members but strong relevance may be better for a user than a massive generic community.
-
-This follows the same philosophy as posts: existing size should not be the only path to visibility.
-
----
-
-# Personalization
-
-Personalization should improve relevance without trapping users in narrow bubbles.
-
-The system should learn from:
-
-- Explicit interests
-- Follows
-- Saves
-- Shares
-- Comments
-- Watch/read time
-- Searches
-- Communities
-- Projects
-- Negative feedback
-
-But it should also include exploration.
-
-Users should sometimes see adjacent topics, rising creators, new projects, and fresh communities. Discovery requires some controlled surprise.
-
-The system should avoid extreme repetition. If a user engages with one drum post, the feed should not become only drums forever.
-
----
-
-# Metrics
-
-The discovery engine should be evaluated using mission-specific metrics.
-
-Important metrics:
-
-- Eligible posts tested
-- Median first-test reach
-- Time to first test
-- Expansion rate
-- Save rate during first test
-- Follow rate after discovery impression
-- Project application rate
-- Community join rate
-- Hide/report rate
-- New creator return rate
-- Feed retention
-- Viewer satisfaction
-- Creator trust score
-
-Standard metrics like DAU, MAU, session length, and engagement still matter, but they are not enough.
-
-If session length rises while creator trust collapses, the system is failing the mission.
+General growth metrics still matter, but they are not enough. If session length improves while creator trust declines, the product is drifting away from its mission.
 
 ---
 
@@ -542,12 +174,6 @@ If session length rises while creator trust collapses, the system is failing the
 
 The feed and discovery engine define Discovr more than any single screen.
 
-The product promise depends on building a system where eligible posts are classified, matched with relevant first audiences, tested in controlled waves, evaluated through meaningful signals, and expanded when they earn it.
+The system must give eligible content a relevant first test, measure meaningful response, expand in stages, protect feed quality, provide creator feedback, and support discovery for projects and communities.
 
-The system must protect both sides of the marketplace: creators need opportunity, and viewers need relevance.
-
-A discovery engine that is too conservative becomes a normal feed.
-
-A discovery engine that is too generous becomes spam.
-
-The correct system sits between those extremes: intentional, measurable, transparent enough to trust, and strict enough to protect quality.
+A system that is too conservative becomes a standard feed. A system that is too broad becomes noisy. Discovr must operate between those extremes with discipline, measurement, and trust.
