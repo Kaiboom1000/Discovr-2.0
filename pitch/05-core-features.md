@@ -1,493 +1,100 @@
 # 05 — Core Features
 
-Discovr needs to feel like a complete social platform before its discovery system can matter.
+Discovr needs reliable core social mechanics before its discovery system can matter.
 
-A user should not join and feel like basic features are missing. The platform can have a unique discovery philosophy, but the everyday mechanics still need to work: posting, liking, commenting, saving, sharing, following, messaging, searching, reporting, and receiving notifications.
+The platform can have a differentiated distribution model, but users will still expect the basic product to work clearly: accounts, profiles, posting, uploads, likes, comments, saves, shares, follows, search, messaging, notifications, projects, communities, analytics, and account controls.
 
-This chapter defines the core feature set that makes Discovr usable as a social product.
-
-The goal is not to list every future idea. The goal is to define the baseline mechanics clearly enough that the product can be built without guessing what “normal platform features” means.
+This chapter defines the baseline feature set in neutral product language. It avoids founder-specific examples and should be treated as an implementation-oriented roadmap document.
 
 ---
 
 # Feature philosophy
 
-Core features should be simple, predictable, and reliable.
+Core features should be predictable.
 
-Discovr’s differentiation is discovery. Basic social actions should not become strange unless there is a strong reason. A like should feel like a like. A comment should feel like a comment. A save should save. A follow should follow. A report should report.
+A like should feel like a like. A save should save. A follow should follow. A message should send. A report should create an operational record. The product should not make basic actions unusual without a strong reason.
 
-The unique behavior should appear in what the system does with these signals.
+The distinctive behavior should appear in how Discovr interprets these actions. A save is a convenience feature and a quality signal. A follow is a relationship and proof that discovery created interest. A project application is a workflow action and a strong indicator of intent. A hide action is a user control and a ranking signal.
 
-A save is not only a user convenience. It is a quality signal.
-
-A follow is not only a relationship. It is evidence that discovery produced interest.
-
-A comment is not only engagement. It may indicate conversation quality.
-
-A project application is not only a form submission. It is one of the strongest signs of meaningful connection.
-
-Core features must therefore be designed for both user experience and signal quality.
+The feature system must serve the user interface, the discovery engine, analytics, and operational reliability at the same time.
 
 ---
 
-# Accounts
+# Accounts and identity
 
-Users need accounts to post, follow, save, message, join projects, join communities, and receive personalized recommendations.
+Users need accounts to publish, follow, save, message, join communities, create projects, and receive personalized recommendations.
 
-The account system should support:
+The account system should support signup, login, logout, verification, session management, recovery, profile creation, account settings, account deletion, and account state management.
 
-- Sign up
-- Log in
-- Log out
-- Password reset or magic link flow
-- Email verification
-- Username selection
-- Basic profile creation
-- Session management
-- Account deletion later
-- Account recovery
+Account and profile should be separate concepts. The account represents authentication and ownership. The profile represents public identity.
 
-Authentication should be simple. If signup is too slow, users leave before experiencing the product.
+Account states should include active, unverified, restricted, suspended, and pending deletion. These states matter because the platform should not treat every account as equally trusted for posting, messaging, upload limits, and distribution eligibility.
 
-The first version can support email-based signup and OAuth providers later. Google and Apple sign-in are likely useful because they reduce friction.
-
-Accounts should be separate from profiles in the data model. The account represents authentication and ownership. The profile represents public identity.
-
-Account states should include:
-
-- Active
-- Email unverified
-- Restricted
-- Suspended
-- Deleted or pending deletion
-
-These states matter because distribution should not treat every account equally. A brand-new unverified account should not receive the same trust as a long-standing account with healthy behavior. Account trust should affect rate limits, upload limits, messaging ability, and discovery eligibility.
-
----
-
-# Usernames and display names
-
-Every user should have a unique username and a display name.
-
-The username is the stable public handle.
-
-The display name is the human-readable name shown in the interface.
-
-Rules:
-
-- Usernames must be unique.
-- Usernames should be limited to safe characters.
-- Usernames should be case-insensitive for uniqueness.
-- Reserved words should be blocked.
-- Impersonation should be handled through reporting and verification later.
-- Display names can be more flexible.
-
-Usernames matter because they appear in profiles, mentions, URLs, search, messaging, and project ownership.
-
-Username changes should be allowed, but not too frequently. Frequent handle changes can create impersonation risk, broken links, and user confusion.
+Usernames should be unique, stable, readable, and protected from reserved terms. Display names can be more flexible but still need operational rules against misleading use.
 
 ---
 
 # Profiles
 
-Profiles are covered deeply in a later chapter, but the core feature set requires a baseline.
+Profiles convert attention into identity.
 
-Users should be able to edit:
+A basic profile should include avatar, display name, username, bio, links, posts, follow action, message action where allowed, and basic account context. Later versions can add featured posts, featured projects, skills, availability, communities, badges, and creator analytics.
 
-- Avatar
-- Display name
-- Username where allowed
-- Bio
-- Links
-- Interests
-- Skills later
-- Collaboration status later
+The profile should answer who the person or entity is, what they publish, what they are associated with, and what action a visitor can take next.
 
-Profiles should show:
-
-- Posts
-- Projects
-- Communities where appropriate
-- Follow button
-- Message button where allowed
-- Basic stats
-
-The profile should not feel empty even for new users. Empty states should guide users to post, add interests, create a project, or follow others.
-
-Profiles are also a conversion surface. A post creates attention, but the profile turns attention into identity. If a user discovers a creator and taps through, the profile should help them decide whether to follow, message, save, apply, collaborate, or explore more.
+Profiles should remain social and readable. They should not become dense professional resumes unless the user chooses to expose more structured information.
 
 ---
 
-# Posting
+# Posting and uploads
 
 Posting is the core creator action.
 
-The MVP should support:
+The first version should support text posts, image posts, project updates, and community-attached posts. Short video can be included if media infrastructure is ready. More complex formats can come later.
 
-- Text posts
-- Image posts
-- Carousel posts if practical
-- Short video posts if infrastructure supports it
-- Project updates
-- Community posts
+Every post should support caption or body text, media where relevant, topic metadata, visibility state, edit rules, deletion, review state, and distribution state.
 
-Every post should support:
+Media uploads require validation, file limits, processing status, thumbnails, metadata, storage paths, deletion rules, and clear user feedback. Upload failures should be recoverable. Drafts should preserve work where possible.
 
-- Caption or body text
-- Media attachment where relevant
-- Topics or inferred topics
-- Visibility
-- Edit caption where appropriate
-- Delete
-- Report by others
-- Moderation status
-- Distribution status
-
-Posting should be fast and reliable. Failed uploads should be recoverable. Drafts should be saved where possible.
-
-The create flow should not ask the user for too much metadata, but it should capture enough context for discovery.
-
-A post should have clear lifecycle states:
-
-- Draft
-- Uploading
-- Processing
-- Published
-- Under review
-- Limited distribution
-- Removed
-- Deleted
-
-The user does not need to see every internal state, but the system needs them for reliability, moderation, and analytics.
+A post should have lifecycle states such as draft, uploading, processing, published, under review, limited, removed, and deleted. The interface does not need to expose every internal state, but the system needs them for reliability.
 
 ---
 
-# Media uploads
+# Captions, topics, and metadata
 
-Media is expensive and technically important.
+Captions help users understand content and help the system classify it. They should be searchable and usable for recommendation context.
 
-The upload system should support:
+Topics help the discovery engine match content to audiences. Topics can be user-entered, system-inferred, or both. The system should treat user-entered topics as useful but not automatically correct.
 
-- Images
-- Short videos later
-- Thumbnails
-- File validation
-- File size limits
-- File type limits
-- Upload progress
-- Processing status
-- Failed upload recovery
-- Deletion
-
-Media should be stored through a system designed for scale, such as Cloudflare R2 or an equivalent object storage layer.
-
-Each media asset should have metadata:
-
-- Owner
-- Original filename where appropriate
-- MIME type
-- Size
-- Dimensions
-- Duration for video
-- Storage path
-- Thumbnail path
-- Processing status
-- Moderation status
-- Created time
-
-Media upload limits should be tied to product and business decisions. The free plan should allow meaningful use, while paid plans can support higher storage, larger uploads, and better tools.
-
-Media upload failures must be handled gracefully. A user should never wonder whether their post disappeared. Upload state, retry behavior, and draft preservation are part of the user experience.
+A topic system should improve classification, search, recommendations, community routing, and analytics. It should not become a shortcut for unrelated reach. Repeated mismatch between declared topics and actual response should reduce confidence in that metadata.
 
 ---
 
-# Captions and text
+# Engagement features
 
-Captions help users understand content and help the system classify it.
+Likes are simple positive feedback. They are useful but shallow.
 
-Caption features:
+Comments create conversation and context. Comment volume should be interpreted carefully because quantity does not always equal quality.
 
-- Plain text
-- Mentions later
-- Hashtags or topics
-- Links where allowed
-- Basic formatting later if needed
-- Edit window or edit history decision
+Replies can support conversation but should avoid deep nesting in the first version. A single reply level is likely enough for the early product.
 
-Captions should be searchable and used for recommendation context.
+Saves are a strong positive signal because they indicate that a user wants to return to content later. Saves should be private by default.
 
-The platform should avoid overcomplicated formatting in the MVP. Social posts should remain fast.
+Shares help content travel outside the feed. Public posts, profiles, projects, and communities should eventually have clean shareable URLs with polished previews.
 
-Text posts should still feel designed. They should not look like raw notes dropped into a feed. The interface can use readable width, rounded surfaces, good spacing, and subtle typography hierarchy.
+Follows create relationships between users and accounts. Follower count is useful but should not become the only visible status indicator in the product.
 
 ---
 
-# Topics and tags
+# Negative preference and account controls
 
-Topics help the discovery system match content with audiences.
+Users need ways to control relevance and unwanted interaction.
 
-Tags can be user-entered, system-inferred, or both.
+The product should support hiding content, indicating disinterest, muting later, blocking, and reporting. These controls protect the user experience and provide important ranking and operations signals.
 
-A good topic system should:
+Reports should be available for posts, comments, profiles, messages, projects, communities, and applications. The reporting flow should be quick enough for users and specific enough for review.
 
-- Help classify posts
-- Improve search
-- Improve recommendations
-- Support communities
-- Avoid hashtag spam
-- Allow correction by users
-
-The interface can suggest topics after upload.
-
-Example:
-
-“Looks like this post is about Music, Drums, and Live Performance.”
-
-The user can accept, remove, or add topics.
-
-Topics should not become a hack where users add unrelated popular tags to chase reach. The ranking system should detect mismatch between topics and user response.
-
-Topic abuse should reduce trust. If a creator repeatedly tags unrelated topics, the system should become less confident in user-entered metadata from that account.
-
----
-
-# Likes
-
-Likes are the simplest positive feedback signal.
-
-A like should indicate that the user appreciated the post, but likes are shallow compared to saves, shares, follows, and project actions.
-
-Feature requirements:
-
-- Like a post
-- Unlike a post
-- Show like count where appropriate
-- Store timestamp
-- Prevent duplicate likes
-- Respect blocked/deleted content
-
-Likes should influence ranking, but they should not dominate it.
-
-A platform that overvalues likes will reward content optimized for quick approval instead of meaningful discovery.
-
-The interface should make liking quick, but the analytics system should treat likes as one signal among many.
-
----
-
-# Comments
-
-Comments create conversation and context.
-
-The MVP should support:
-
-- Add comment
-- Delete own comment
-- Report comment
-- Like comment later
-- Reply to comment later or in MVP if practical
-- Comment count
-
-Comments need moderation controls from the beginning. Comment sections can become hostile quickly.
-
-Users should be able to report comments. Creators should eventually have tools to restrict or manage comments on their own posts.
-
-The ranking system should treat comments carefully. A high comment count can indicate value, but it can also indicate controversy, arguments, or spam.
-
-Comment quality is more important than comment volume. A post with fewer thoughtful comments may be more valuable than a post with many low-quality reactions.
-
----
-
-# Replies
-
-Replies allow threaded conversation.
-
-The MVP can either support one level of replies or delay replies until comments are stable.
-
-If replies exist, they should be limited and readable. Deep nested threads are difficult on mobile and can make the interface messy.
-
-Recommended approach:
-
-- Support one level of replies.
-- Collapse long reply chains.
-- Allow reporting and deletion.
-- Avoid infinite nesting.
-
-Threaded replies should respect blocks. If a user blocks someone, replies involving that user should not create confusing interaction loops.
-
----
-
-# Saves
-
-Saves are one of the strongest positive signals.
-
-A save means the user wants to return to the content later. That usually indicates more value than a like.
-
-Feature requirements:
-
-- Save post
-- Unsave post
-- View saved posts privately
-- Organize saves into collections later
-- Use saves as ranking signal
-
-Saves should be private by default. Public saved collections can be considered later, but private saving is safer and simpler.
-
-Saves are especially important for educational content, project posts, inspiration, tutorials, music discoveries, and creator portfolios.
-
-The feed algorithm should treat saves as a strong sign that a discovery mattered.
-
----
-
-# Shares
-
-Sharing helps content leave its original surface.
-
-Share options:
-
-- Copy link
-- Native device share sheet
-- Share to another Discovr user later
-- Share to message later
-- Share to project/community later
-
-Share count can be a strong signal, but not every share is visible to the platform once content leaves Discovr.
-
-The platform should generate clean public URLs for posts, profiles, projects, and communities.
-
-Shared previews should look polished. If someone sends a Discovr link, the preview should include useful title, image, and description metadata.
-
-External sharing is also a growth loop. Good public preview pages can bring new users into Discovr without paid acquisition.
-
----
-
-# Follows
-
-Following creates a relationship between a viewer and a creator.
-
-Feature requirements:
-
-- Follow user
-- Unfollow user
-- See followers/following where appropriate
-- Show follower count or hide/soften it as a design decision
-- Use follows in feed ranking
-- Notify users about new followers where appropriate
-
-Follower count is useful but can also recreate popularity pressure. Discovr should consider how strongly follower counts are displayed.
-
-Possible approaches:
-
-- Show exact counts like normal platforms.
-- Show rounded counts after a threshold.
-- Emphasize reach and discovery analytics over follower count.
-
-The first version can show follower counts normally, but the product should avoid making follower count the only visible status marker.
-
-A follow that happens after a discovery impression is one of the strongest proof points that the system matched content well.
-
----
-
-# Blocks
-
-Blocking is a required safety feature.
-
-When a user blocks another user:
-
-- The blocked user should not be able to message them.
-- The blocked user should have limited access to their profile/content depending on privacy rules.
-- The blocker should stop seeing the blocked user’s content.
-- Existing conversations may be hidden or restricted.
-- The block should affect recommendations.
-
-Blocking should be easy to access from profiles, posts, comments, and messages.
-
-Blocks should be private. The blocked user should not receive a notification that they were blocked.
-
----
-
-# Mutes and hides
-
-Not every negative preference requires a block.
-
-Hide and mute features allow softer control.
-
-Potential controls:
-
-- Hide this post
-- Not interested
-- Show fewer posts like this
-- Mute user later
-- Mute topic later
-- Mute community later
-
-These controls improve feed relevance and reduce user frustration.
-
-They also generate negative signals for recommendation quality.
-
-A “not interested” action should be easy to use but not too easy to trigger accidentally.
-
----
-
-# Reports
-
-Reporting is required for safety and moderation.
-
-Users should be able to report:
-
-- Posts
-- Comments
-- Profiles
-- Messages
-- Projects
-- Communities
-- Project applications
-
-Report categories may include:
-
-- Spam
-- Harassment
-- Impersonation
-- Scam
-- Hate or abuse
-- Unsafe content
-- Stolen content
-- Inappropriate media
-- Misinformation category later if policy requires it
-- Other
-
-Reports should create moderation records with enough context for review.
-
-A report flow should be quick but specific. Users should not need to write an essay, but moderators need usable information.
-
-Reports should also feed platform integrity systems. A sudden spike in reports can trigger temporary distribution limits while review happens.
-
----
-
-# Notifications
-
-Notifications are the feedback system of the product.
-
-Core notifications:
-
-- Like
-- Comment
-- Reply
-- Follow
-- Mention later
-- Message request
-- Direct message
-- Project application
-- Project response
-- Community invite later
-- Post test completed
-- Post expanded
-- Moderation action
-
-Notifications should be grouped where possible.
-
-A creator should not receive fifty separate notifications if one post gets a burst of likes. Grouping makes the product calmer and more professional.
-
-Notifications should be configurable. Users should eventually control which notifications become push alerts, emails, or in-app-only events.
+Administrative tools should exist early. Operating a social product through database edits is not acceptable. The team needs interfaces for reviewing records, resolving reports, restricting accounts, and auditing administrative actions.
 
 ---
 
@@ -495,293 +102,72 @@ Notifications should be configurable. Users should eventually control which noti
 
 Messaging is a core feature because discovery needs follow-up.
 
-MVP messaging should support:
+The first version should support direct conversations, message requests, project-related context, basic notifications, and user controls. More advanced group and team messaging can come later.
 
-- One-to-one conversations
-- Message requests
-- Blocking
-- Reporting
-- Basic notifications
-- Project application context
+Message requests are important because they allow discovery-driven contact without placing every new interaction directly into the main inbox.
 
-Later messaging can support:
-
-- Group chats
-- Project team chats
-- Media sharing
-- Reactions
-- Pinned messages
-- Search within messages
-- Voice notes
-- Calls only if strongly justified later
-
-The initial messaging system should be safe before it is powerful. Open DMs without controls will create spam and abuse.
-
-Message requests are especially important. Users should be able to receive connection attempts without letting every stranger enter their main inbox.
+Messaging should be reliable, organized, and connected to projects and profiles. It should not attempt to replace every communication tool in the first version.
 
 ---
 
-# Project applications
+# Projects and applications
 
-Project applications are a core feature because Projects are a major differentiator.
+Project applications are core because Projects are a differentiating product surface.
 
-An application should include:
+An application should include applicant, project, role or participation type, short message, relevant profile context, status, and conversation context where appropriate.
 
-- Applicant
-- Project
-- Role applied for
-- Short message
-- Relevant links or profile sections
-- Status: pending, accepted, rejected, withdrawn
-- Conversation link where appropriate
+Applications should be lightweight enough for social collaboration and structured enough that project owners can manage them.
 
-Project owners should be able to review applications and respond.
-
-Applications should not feel like job applications unless the project requires that level of seriousness. The UX should be lightweight enough for creative collaboration.
-
-Applications are also a very strong discovery signal. If users apply to a project after seeing it, the platform has evidence that the recommendation produced meaningful intent.
+Application activity is one of the strongest indicators that discovery produced intent.
 
 ---
 
 # Search
 
-Search is a core discovery tool.
+Search is intentional discovery.
 
-MVP search should support:
+The first version should support search across users, posts, projects, and communities. Results should be grouped by object type so the user understands what has been found.
 
-- Users
-- Posts
-- Projects
-- Communities
+Later versions can add semantic search, role search, skill search, topic search, and richer filters. Search should eventually connect strongly with projects, profiles, communities, and discovery analytics.
 
-Search should handle:
-
-- Exact usernames
-- Display names
-- Keywords
-- Topics
-- Project titles
-- Community names
-
-Later search should become semantic and support queries like:
-
-- “drummer in Mumbai”
-- “robotics team looking for programmer”
-- “designer for app project”
-- “short film editor”
-
-Search should eventually connect strongly with skills, roles, interests, and project needs.
-
-Search results should be cleanly grouped by object type so users understand whether they found a person, post, project, or community.
+All search examples in this specification should remain generic and should not reference founder-specific interests, locations, organizations, or prior private projects.
 
 ---
 
-# Drafts
+# Drafts, edits, and deletion
 
-Drafts reduce posting anxiety and prevent lost work.
+Drafts reduce lost work and posting anxiety. The product should support basic draft preservation for text and project updates, with media draft handling added as infrastructure allows.
 
-Draft support should include:
+Editing rules should be clear. Caption editing can be allowed. Media replacement after publication should be delayed until the implications for integrity, analytics, and review are understood.
 
-- Auto-save text drafts
-- Save media draft references where possible
-- Resume unfinished post
-- Delete draft
-- Drafts for project updates later
-
-Drafts are especially important for longer captions, project updates, and posts with multiple media items.
-
-The MVP can start with simple local or server-side drafts depending on architecture.
-
-Drafts should never accidentally publish. The transition from draft to published should be explicit.
+Deletion should remove public access quickly. Backend retention may exist temporarily for operational reasons, but user-facing behavior should be clear and consistent.
 
 ---
 
-# Editing and deletion
+# Notifications
 
-Users should be able to delete their own content.
+Notifications should communicate relevant events without creating unnecessary noise.
 
-Editing rules need careful decisions.
+Core notification types include comments, replies, follows, messages, project applications, project responses, community activity, distribution milestones, and account notices.
 
-Posts may allow caption edits. Media edits are more complex because changing media after engagement can confuse context and moderation.
-
-Recommended approach:
-
-- Allow caption edits.
-- Show edited indicator later if needed.
-- Do not allow media replacement after publishing in MVP.
-- Allow deletion.
-- Soft-delete first, then purge according to policy.
-
-Comments should allow deletion. Editing comments can be added later.
-
-Deletion should remove public access quickly, even if backend retention exists temporarily for backups, safety, or abuse investigations.
-
----
-
-# Mentions
-
-Mentions allow users to reference other users.
-
-Mentions can be added after core posting is stable.
-
-Feature requirements:
-
-- Type @username
-- Autocomplete
-- Notify mentioned user
-- Respect blocks
-- Prevent mention spam
-
-Mention spam can become a problem. Rate limits and notification controls are important.
-
-Mentions in project updates can be useful when crediting collaborators, but the same safety rules apply.
-
----
-
-# Links
-
-Links are useful but risky.
-
-Users may want to link to portfolios, GitHub, YouTube, Instagram, websites, ticket pages, project docs, and resources.
-
-Risks include scams, phishing, spam, malware, and low-quality link farming.
-
-The MVP should support links carefully:
-
-- Profile links
-- Post links if allowed
-- Project links
-- Link previews later
-- Safety scanning later
-- Rate limits for new accounts
-
-Links should not become a loophole for spam distribution.
-
-New accounts may need stricter link limits until they gain trust.
-
----
-
-# Bookmarks and collections
-
-Saves are the MVP version.
-
-Collections can come later.
-
-Collections could allow users to organize saved posts into groups:
-
-- Music inspiration
-- Robotics ideas
-- Design references
-- People to message
-- Project ideas
-- Tutorials
-
-Collections can become powerful, but they should not delay the MVP.
-
----
-
-# Sharing outside Discovr
-
-External sharing matters for growth.
-
-Every public post, profile, project, and community should eventually have a clean URL.
-
-Shared pages should include:
-
-- Open graph metadata
-- Preview image
-- Title
-- Description
-- Call to open Discovr
-
-External sharing helps new users discover the platform without paid acquisition.
-
-Public pages should load quickly and look polished even for logged-out users.
-
----
-
-# Admin basics
-
-Even early versions need admin tools.
-
-Minimum admin abilities:
-
-- View users
-- View reported posts
-- View reported comments
-- View reported profiles
-- Remove content
-- Restrict accounts
-- Resolve reports
-- View basic media metadata
-- View project reports
-- View message reports where policy allows
-
-Without admin tools, moderation becomes manual database work, which is fragile and unsafe.
-
-Admin actions should be logged. Any system that can remove content, restrict users, or view sensitive reports needs accountability.
+Notifications should be grouped where possible and written in a factual tone. The product should avoid manipulative notification language.
 
 ---
 
 # Feature priority
 
-The first version should prioritize features that prove the core loop.
+The first version should prioritize the features that prove the discovery loop: accounts, profiles, posting, media upload, feed, basic ranking, likes, comments, saves, shares, follows, search, projects, applications, message requests or basic conversations, notifications, creator analytics, user controls, and administrative tools.
 
-## Must-have
+Secondary features include replies, drafts, topic suggestions, community basics, caption editing, disinterest controls, and stronger internal tools.
 
-- Accounts
-- Profiles
-- Posting
-- Media upload
-- Feed
-- Like
-- Comment
-- Save
-- Share link
-- Follow
-- Search basics
-- Projects basics
-- Project applications
-- Message requests or basic DMs
-- Notifications basics
-- Report
-- Block
-- Creator analytics basics
-
-## Should-have
-
-- Replies
-- Drafts
-- Topic suggestions
-- Community basics
-- Post edit captions
-- Hide/not interested
-- Admin moderation tools
-
-## Could-have later
-
-- Collections
-- Mentions
-- Advanced group chats
-- Scheduling
-- Polls
-- Paid memberships
-- Creator storefronts
-- Advanced analytics
-- Live streaming
-- Calls
-- Public API
-
-This priority list should stay flexible, but the product should not delay launch for features that do not prove discovery.
+Later features include collections, mentions, advanced group messaging, scheduling, polls, advanced monetization, deep analytics, live formats, public APIs, and marketplace mechanics.
 
 ---
 
 # Chapter conclusion
 
-Discovr needs strong basic social mechanics before its discovery system can matter.
+Core features are not the differentiator by themselves, but they are the foundation that allows the differentiator to work.
 
-The core features are not glamorous, but they are the foundation: accounts, profiles, posts, uploads, likes, comments, saves, shares, follows, blocks, reports, notifications, messaging, search, projects, applications, drafts, editing, and admin basics.
+Discovr must feel like a reliable social product before users will trust its discovery system. The early product should include enough functionality to publish, browse, interact, follow up, manage identity, organize projects, join communities, understand outcomes, and operate the platform responsibly.
 
-These features should feel familiar and reliable. The unique value comes from how Discovr uses them to create meaningful discovery, safer connection, and better creator feedback.
-
-The first version should not attempt to include every possible feature. It should include enough to make Discovr feel like a real social platform and enough to prove that fairer discovery can work.
+The system should remain familiar at the action level and distinctive at the distribution level.
