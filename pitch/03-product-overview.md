@@ -2,7 +2,7 @@
 
 Discovr is a social discovery platform.
 
-The product should feel familiar immediately: a user opens the app, scrolls a feed, posts content, interacts with people, follows creators, joins communities, sends messages, and creates or discovers projects. The platform should not require a complicated explanation before it becomes usable.
+The product should feel familiar immediately: a user opens the app, scrolls a feed, posts content, interacts with people, follows creators, joins communities, sends messages, and creates or discovers projects. The platform should not require a complicated explanation before it becomes useful.
 
 The deeper product difference is what happens behind those familiar actions. Discovr gives eligible posts a relevant first audience, measures meaningful response, and expands distribution when the content earns it. The same philosophy extends beyond posts. Projects, communities, profiles, and creators should also be discoverable based on relevance rather than only existing size.
 
@@ -24,7 +24,7 @@ Discovr is built around five major product objects:
 
 Messaging, search, notifications, analytics, and monetization support those objects.
 
-The feed is the primary discovery surface, but it is not the only product. Discovr should avoid becoming a feed-only platform where everything begins and ends with scrolling. The feed introduces people, posts, projects, and communities. The rest of the product gives users a reason to act on what they discover.
+The feed is the primary discovery surface, but it is not the whole product. Discovr should avoid becoming a feed-only platform where everything begins and ends with scrolling. The feed introduces people, posts, projects, and communities. The rest of the product gives users a reason to act on what they discover.
 
 The simplest model is:
 
@@ -43,6 +43,35 @@ The product should support all of these paths without forcing every user into ev
 
 ---
 
+# Product promise in practical terms
+
+The product promise is not only a slogan. It affects what must exist in the product.
+
+If Discovr says every eligible post receives a real chance to be discovered, the product needs:
+
+- A posting system that captures enough context to understand the content.
+- A classification system that can map posts to likely audiences.
+- A feed system that reserves inventory for discovery tests.
+- An analytics system that tells creators what happened.
+- Safety systems that prevent guaranteed reach from becoming spam distribution.
+- A profile system that lets discovered creators convert attention into identity.
+- A messaging system that lets discovery become conversation.
+- Project and community systems that let discovery become participation.
+
+The platform cannot make the promise only in marketing. It has to be visible in normal usage.
+
+Creators should see that their posts are tested.
+
+Viewers should see unknown but relevant creators in the feed.
+
+Project owners should see that projects can attract attention outside their existing circles.
+
+Community organizers should see that communities can be recommended before they are already large.
+
+If these things are not visible, Discovr becomes a normal social app with nicer wording. That is not enough.
+
+---
+
 # Primary navigation
 
 The first usable product should have simple navigation.
@@ -52,42 +81,31 @@ A likely mobile tab structure:
 1. Home
 2. Discover
 3. Create
-4. Projects or Communities
-5. Inbox
-6. Profile
-
-Because mobile tab bars usually cannot comfortably hold six items, the first version may need to choose between a five-tab model and a hybrid model.
-
-A practical five-tab model:
-
-1. Home
-2. Discover
-3. Create
-4. Inbox
-5. Profile
-
-Projects and Communities can live inside Discover at first, then become separate tabs once usage proves they deserve first-class placement.
-
-A more ambitious five-tab model:
-
-1. Home
-2. Discover
-3. Create
 4. Projects
 5. Profile
 
-Inbox can be placed in the top-right corner, similar to many social apps.
+Inbox can live as a persistent top-right icon because chat is important but does not always need a bottom-tab slot. Communities can live inside Discover at first and later become more prominent if usage proves they deserve first-class placement.
 
-The best early decision is likely:
+A practical early navigation structure:
 
-- Home as the default feed
-- Discover as the exploration hub
-- Create as the central creation action
-- Projects as a major product section accessible from navigation
-- Inbox as a top-level icon
-- Profile as a persistent user destination
+- Bottom tab: Home
+- Bottom tab: Discover
+- Center action: Create
+- Bottom tab: Projects
+- Bottom tab: Profile
+- Top-right icon: Inbox
+- Search inside Discover, with global search expansion later
 
-The exact layout can be tested, but the information architecture should keep these ideas clear.
+This gives Projects enough importance without overcrowding the bottom bar.
+
+The exact layout can be tested, but the information architecture should keep these ideas clear:
+
+- Home is passive discovery.
+- Discover is intentional exploration.
+- Create is publishing.
+- Projects are collaboration.
+- Inbox is follow-up.
+- Profile is identity.
 
 ---
 
@@ -110,15 +128,15 @@ The Home feed includes:
 
 Home should not feel random. Users should understand why the feed feels relevant even when it includes unknown creators.
 
-The feed should balance several categories:
+The feed should balance several categories.
 
 ## Familiar content
 
-Content from followed creators and communities provides continuity. Users need some predictability.
+Content from followed creators and joined communities provides continuity. Users need some predictability. A feed made only of strangers can feel unstable even if the recommendations are good.
 
 ## Discovery content
 
-New or unknown creators receive controlled feed inventory. This is where Discovr proves its mission.
+New or unknown creators receive controlled feed inventory. This is where Discovr proves its mission. Discovery content should be relevant and measured carefully.
 
 ## Interest-based content
 
@@ -167,7 +185,7 @@ The search bar should be prominent. Search should eventually support posts, user
 
 Discover should also help users adjust their interests. If the feed is becoming repetitive or irrelevant, Discover gives users a way to steer the system intentionally.
 
-Potential Discover sections:
+Potential Discover sections include:
 
 ## Rising creators
 
@@ -706,6 +724,64 @@ Users should be able to:
 Admins should eventually have internal tools to review reports and take actions. The product cannot depend only on database access or manual hacks.
 
 Moderation is part of the product surface because users need visible safety tools.
+
+---
+
+# User journeys
+
+The product should be designed around complete journeys, not isolated screens.
+
+## Viewer journey
+
+A viewer signs up, selects interests, opens Home, sees a mix of familiar and unknown content, saves posts, follows creators, joins communities, and gradually trains the feed.
+
+The viewer should feel that the platform is not random. Unknown creators should appear because they are relevant, not because the system is dumping unfiltered content into the feed.
+
+## New creator journey
+
+A new creator signs up, builds a profile, posts content, receives an initial test, sees analytics, gains some engagement, learns what worked, and posts again.
+
+The critical moment is after the first post. If the creator sees no reach and no explanation, Discovr fails its emotional promise.
+
+## Project owner journey
+
+A project owner creates a project, adds roles, posts an update, receives discovery through feed and Discover, gets followers or applicants, reviews applications, starts a project chat, and posts progress.
+
+The project owner should feel that Discovr is more useful than posting a “looking for people” caption into the void.
+
+## Collaborator journey
+
+A user sees a project, checks the owner’s profile, reads the roles needed, applies, enters a conversation, and joins if accepted.
+
+This flow must feel safe and structured.
+
+## Community organizer journey
+
+A user creates or moderates a community, defines rules, posts starter content, invites members, sees community recommendations begin, and uses community activity to create recurring engagement.
+
+Communities should not be abandoned containers. They need prompts, visibility, and activity loops.
+
+---
+
+# Object relationships
+
+Discovr’s product objects should connect naturally.
+
+A user owns a profile.
+
+A user creates posts.
+
+A post can belong to a profile, project, community, or combination of these depending on visibility rules.
+
+A project has owners, members, roles, applications, updates, followers, and related posts.
+
+A community has members, moderators, posts, rules, projects, and discussions.
+
+A message can be tied to a user conversation, group, project application, or project team.
+
+A notification can point to a post, comment, message, project, community, report, analytics event, or billing event.
+
+This connected model matters because discovery should not dead-end. A discovered post should lead somewhere. A discovered creator should have identity. A discovered project should have structure. A discovered community should have activity. A discovered collaborator should be reachable safely.
 
 ---
 
