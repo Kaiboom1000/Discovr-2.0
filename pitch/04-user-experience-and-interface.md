@@ -12,6 +12,8 @@ A casual viewer should be able to open the app and scroll without thinking. A ne
 
 The interface should not try to prove that Discovr is different by making basic actions weird. The product should feel familiar where familiarity reduces friction and distinctive where distinction supports the core promise.
 
+The visual direction is clean, white, minimal, rounded, and content-first, with a fully considered dark mode. It should feel closer to the clarity of Instagram, Notion, Linear, and modern Apple-style interfaces than to a loud neon creator app. The product can have personality, but the base interface should feel polished, calm, and premium.
+
 ---
 
 # UX principles
@@ -63,6 +65,10 @@ A discovery platform should not feel static. The interface should communicate th
 
 This can happen through subtle status labels, notification wording, activity modules, and analytics states.
 
+## 7. Minimal does not mean empty
+
+The interface should be minimal in noise, not minimal in usefulness. Important actions must remain visible. Cards should have breathing room. Labels should be clear. Empty states should guide action. Minimalism should make the product easier to use, not harder to understand.
+
 ---
 
 # Platform priorities
@@ -99,27 +105,127 @@ The same product should feel coherent across devices, but not identical. Mobile 
 
 # Visual direction
 
-Discovr should feel modern, creative, and focused.
+Discovr should use a clean, white, minimalist visual system with rounded corners, soft borders, restrained shadows, and a polished dark mode.
 
-It should not look like a bland enterprise tool. It should also avoid looking like a chaotic gimmick platform. The brand should support creators, builders, and communities without overpowering their content.
+The base interface should feel calm and premium. It should not look like a noisy gamer dashboard, a crypto landing page, or an over-designed neon app. Content should be the hero. The interface should make posts, profiles, projects, communities, and messages feel easy to scan.
 
-Visual principles:
+The visual reference point is closer to:
 
-## Content-first layout
+- Instagram’s familiar social clarity
+- Notion’s calm surfaces
+- Linear’s sharp hierarchy
+- Apple’s restraint and spacing
+- Modern rounded card interfaces
 
-Posts, media, project banners, profile content, and community activity should be visually dominant. Interface chrome should support navigation and action, not compete with content.
+The product should not copy any of these directly. The goal is to capture the same feeling of clarity: white space, legible typography, rounded surfaces, clean icons, and a sense that every element has a reason to exist.
 
-## Strong hierarchy
+## Light mode
 
-Users should instantly know what matters on a screen: the post, the creator, the action, the project role, the application button, the message request, or the analytics summary.
+Light mode is the default visual identity.
 
-## Clean density
+Expected qualities:
 
-The interface should not be empty and wasteful, but it should not feel cramped. Social products need speed, so information density should be intentional.
+- White or near-white app background
+- Slightly off-white page surfaces where needed
+- Dark neutral text
+- Subtle gray borders
+- Rounded cards
+- Soft shadows used sparingly
+- Clear iconography
+- Accent color used only for meaningful actions
+- Minimal gradients, if any
 
-## Soft personality
+Light mode should not feel sterile. It can use warmth through spacing, rounded corners, subtle elevation, and friendly typography.
 
-Discovr can use expressive color, motion, icons, and microcopy, but the writing should stay clear and mature. The product can feel youthful without sounding unserious.
+## Dark mode
+
+Dark mode should be first-class, not a simple color inversion.
+
+Expected qualities:
+
+- Deep neutral background, not pure black everywhere
+- Slightly lighter card surfaces
+- Clear separation between cards and background
+- High readability
+- Reduced harsh contrast where possible
+- Accent color adjusted for dark surfaces
+- Media still feels dominant
+- Borders and dividers remain subtle
+
+Dark mode should feel premium and comfortable for long browsing sessions.
+
+## Rounded corners
+
+Rounded corners are a core part of the interface language.
+
+Cards, buttons, inputs, media containers, modals, chips, message bubbles, project cards, community cards, and profile modules should use consistent radius values.
+
+The product should avoid sharp, harsh rectangles unless there is a strong reason. Rounded surfaces make the interface feel approachable and modern.
+
+## Cards and surfaces
+
+Discovr should use card-based surfaces for:
+
+- Posts
+- Project previews
+- Community previews
+- Creator suggestions
+- Analytics summaries
+- Message requests
+- Notification groups
+- Search results
+
+Cards should feel lightweight. They should not have heavy shadows or thick borders. The design should use spacing, background contrast, and subtle borders more than dramatic elevation.
+
+## Accent color
+
+The accent color should be used carefully for:
+
+- Primary buttons
+- Active navigation states
+- Links or highlighted actions
+- Progress/status indicators
+- Selected chips
+
+The app should not be flooded with accent color. If everything is highlighted, nothing is highlighted.
+
+---
+
+# Layout and spacing
+
+Spacing should make the product feel calm and easy to scan.
+
+General spacing principles:
+
+- Feed cards should have enough separation to avoid visual fatigue.
+- Text blocks should avoid long dense paragraphs inside UI.
+- Primary actions should be close to the content they affect.
+- Secondary actions should be accessible but not visually dominant.
+- Mobile tap targets should be comfortable.
+- Desktop layouts can use wider grids, but should not stretch content lines too far.
+
+Whitespace is useful when it improves scanning. It becomes wasteful when it hides important actions or makes the interface feel empty.
+
+---
+
+# Typography
+
+Typography should be simple and highly readable.
+
+The product should use a modern sans-serif font with strong readability across mobile and desktop. Font sizes should support quick scanning in the feed and longer reading in posts, project descriptions, comments, and settings.
+
+Text hierarchy should be clear:
+
+- Page title
+- Section title
+- Card title
+- Body text
+- Metadata
+- Labels
+- Captions
+- Helper text
+
+The UI should avoid excessive font weights. Too many weights make the interface look messy.
 
 ---
 
@@ -144,6 +250,8 @@ The default feed card should include:
 - Link to project or community if attached
 
 The feed should support quick actions without overwhelming the card.
+
+Feed cards should use rounded surfaces and clean spacing. Media should respect the rounded shape where appropriate. Text posts should feel designed, not like raw database entries. Image and video posts should keep content dominant while preserving consistent action placement.
 
 ## Post context
 
@@ -199,6 +307,8 @@ Possible layout:
 Discover should be visually different from Home. Home is an endless stream. Discover is a set of doors.
 
 The page should help users steer the algorithm. Users should be able to add, remove, or tune interests from Discover.
+
+Discover cards should use the same rounded minimalist system as the feed while supporting more variety: horizontal creator cards, compact community cards, project cards with roles, and topic tiles.
 
 ---
 
@@ -276,6 +386,8 @@ For the profile owner, the page should include shortcuts to analytics, edit prof
 
 For visitors, the page should prioritize identity and action.
 
+The profile should stay clean and social. It should not become a cluttered resume. Portfolio depth should be available, but the first view should feel like a modern social profile.
+
 ---
 
 # Project UX
@@ -319,6 +431,8 @@ Project creation should begin simple:
 6. Banner or media later
 
 More advanced sections can be added after creation.
+
+Project pages should use rounded cards for roles, milestones, updates, and members. They should feel modern and social, not like a database table.
 
 ---
 
@@ -380,6 +494,8 @@ Messaging should include:
 
 Read receipts and typing indicators should be considered carefully. They can improve conversation but also create pressure. They can be optional or delayed until later.
 
+Message bubbles should follow the rounded visual system. The inbox should stay clean and organized so project conversations, requests, and normal DMs do not collapse into chaos.
+
 ---
 
 # Notifications UX
@@ -433,6 +549,8 @@ Or:
 “Your post completed its first discovery test. Engagement was below the expansion threshold, so it will remain available on your profile and in search.”
 
 The product should not over-explain the algorithm, but it should reduce confusion.
+
+Analytics cards should be simple and rounded. Use clear numbers, short labels, and concise explanations. Avoid dashboard clutter in the basic creator view.
 
 ---
 
@@ -598,9 +716,21 @@ The design system should define:
 - Error states
 - Icons
 
-The system should support dark mode from the beginning if possible. Social products often feel better in dark mode, especially for media consumption. Light mode can come too, but dark mode should not be an afterthought.
+The system should support light mode and dark mode from the beginning. Light mode should be the primary clean white identity. Dark mode should be equally polished, not a quick inverted theme.
 
 Components should be reusable. A project card, community card, creator card, and post card should share design logic while preserving their distinct purpose.
+
+Core component direction:
+
+- Rounded corners across the system
+- Minimal borders
+- Subtle shadows only where useful
+- Clean white surfaces in light mode
+- Deep neutral surfaces in dark mode
+- Clear primary actions
+- Soft secondary actions
+- Consistent spacing scale
+- Consistent icon sizing
 
 ---
 
@@ -626,6 +756,10 @@ If message requests and project chats are not separated clearly, the inbox becom
 
 If analytics use vague or inflated language, creators will lose trust.
 
+## Minimalism hides function
+
+A clean UI can accidentally hide important actions. Discovr should avoid mystery-meat icons and overly subtle controls.
+
 ---
 
 # Chapter conclusion
@@ -633,5 +767,7 @@ If analytics use vague or inflated language, creators will lose trust.
 Discovr’s interface should make a complex product feel simple.
 
 The app should be familiar enough for users to understand instantly and distinctive enough to support the discovery promise. Home should feel relevant. Discover should feel intentional. Create should feel fast. Profiles should communicate identity. Projects should make collaboration obvious. Communities should create context. Chat should make follow-up safe. Analytics should make distribution understandable.
+
+The visual system should be clean, white, minimal, rounded, and content-first, with a first-class dark mode. The product should feel premium and calm, not loud or gimmicky.
 
 The product should not rely on hype, clutter, or novelty for its identity. The interface should quietly support the deeper system: helping people, posts, projects, and communities get discovered by the right audience.
