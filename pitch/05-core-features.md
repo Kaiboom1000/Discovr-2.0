@@ -53,6 +53,16 @@ The first version can support email-based signup and OAuth providers later. Goog
 
 Accounts should be separate from profiles in the data model. The account represents authentication and ownership. The profile represents public identity.
 
+Account states should include:
+
+- Active
+- Email unverified
+- Restricted
+- Suspended
+- Deleted or pending deletion
+
+These states matter because distribution should not treat every account equally. A brand-new unverified account should not receive the same trust as a long-standing account with healthy behavior. Account trust should affect rate limits, upload limits, messaging ability, and discovery eligibility.
+
 ---
 
 # Usernames and display names
@@ -73,6 +83,8 @@ Rules:
 - Display names can be more flexible.
 
 Usernames matter because they appear in profiles, mentions, URLs, search, messaging, and project ownership.
+
+Username changes should be allowed, but not too frequently. Frequent handle changes can create impersonation risk, broken links, and user confusion.
 
 ---
 
@@ -101,6 +113,8 @@ Profiles should show:
 - Basic stats
 
 The profile should not feel empty even for new users. Empty states should guide users to post, add interests, create a project, or follow others.
+
+Profiles are also a conversion surface. A post creates attention, but the profile turns attention into identity. If a user discovers a creator and taps through, the profile should help them decide whether to follow, message, save, apply, collaborate, or explore more.
 
 ---
 
@@ -132,6 +146,19 @@ Every post should support:
 Posting should be fast and reliable. Failed uploads should be recoverable. Drafts should be saved where possible.
 
 The create flow should not ask the user for too much metadata, but it should capture enough context for discovery.
+
+A post should have clear lifecycle states:
+
+- Draft
+- Uploading
+- Processing
+- Published
+- Under review
+- Limited distribution
+- Removed
+- Deleted
+
+The user does not need to see every internal state, but the system needs them for reliability, moderation, and analytics.
 
 ---
 
@@ -170,6 +197,8 @@ Each media asset should have metadata:
 
 Media upload limits should be tied to product and business decisions. The free plan should allow meaningful use, while paid plans can support higher storage, larger uploads, and better tools.
 
+Media upload failures must be handled gracefully. A user should never wonder whether their post disappeared. Upload state, retry behavior, and draft preservation are part of the user experience.
+
 ---
 
 # Captions and text
@@ -188,6 +217,8 @@ Caption features:
 Captions should be searchable and used for recommendation context.
 
 The platform should avoid overcomplicated formatting in the MVP. Social posts should remain fast.
+
+Text posts should still feel designed. They should not look like raw notes dropped into a feed. The interface can use readable width, rounded surfaces, good spacing, and subtle typography hierarchy.
 
 ---
 
@@ -216,6 +247,8 @@ The user can accept, remove, or add topics.
 
 Topics should not become a hack where users add unrelated popular tags to chase reach. The ranking system should detect mismatch between topics and user response.
 
+Topic abuse should reduce trust. If a creator repeatedly tags unrelated topics, the system should become less confident in user-entered metadata from that account.
+
 ---
 
 # Likes
@@ -236,6 +269,8 @@ Feature requirements:
 Likes should influence ranking, but they should not dominate it.
 
 A platform that overvalues likes will reward content optimized for quick approval instead of meaningful discovery.
+
+The interface should make liking quick, but the analytics system should treat likes as one signal among many.
 
 ---
 
@@ -258,6 +293,8 @@ Users should be able to report comments. Creators should eventually have tools t
 
 The ranking system should treat comments carefully. A high comment count can indicate value, but it can also indicate controversy, arguments, or spam.
 
+Comment quality is more important than comment volume. A post with fewer thoughtful comments may be more valuable than a post with many low-quality reactions.
+
 ---
 
 # Replies
@@ -274,6 +311,8 @@ Recommended approach:
 - Collapse long reply chains.
 - Allow reporting and deletion.
 - Avoid infinite nesting.
+
+Threaded replies should respect blocks. If a user blocks someone, replies involving that user should not create confusing interaction loops.
 
 ---
 
@@ -295,6 +334,8 @@ Saves should be private by default. Public saved collections can be considered l
 
 Saves are especially important for educational content, project posts, inspiration, tutorials, music discoveries, and creator portfolios.
 
+The feed algorithm should treat saves as a strong sign that a discovery mattered.
+
 ---
 
 # Shares
@@ -314,6 +355,8 @@ Share count can be a strong signal, but not every share is visible to the platfo
 The platform should generate clean public URLs for posts, profiles, projects, and communities.
 
 Shared previews should look polished. If someone sends a Discovr link, the preview should include useful title, image, and description metadata.
+
+External sharing is also a growth loop. Good public preview pages can bring new users into Discovr without paid acquisition.
 
 ---
 
@@ -340,6 +383,8 @@ Possible approaches:
 
 The first version can show follower counts normally, but the product should avoid making follower count the only visible status marker.
 
+A follow that happens after a discovery impression is one of the strongest proof points that the system matched content well.
+
 ---
 
 # Blocks
@@ -355,6 +400,8 @@ When a user blocks another user:
 - The block should affect recommendations.
 
 Blocking should be easy to access from profiles, posts, comments, and messages.
+
+Blocks should be private. The blocked user should not receive a notification that they were blocked.
 
 ---
 
@@ -376,6 +423,8 @@ Potential controls:
 These controls improve feed relevance and reduce user frustration.
 
 They also generate negative signals for recommendation quality.
+
+A “not interested” action should be easy to use but not too easy to trigger accidentally.
 
 ---
 
@@ -410,6 +459,8 @@ Reports should create moderation records with enough context for review.
 
 A report flow should be quick but specific. Users should not need to write an essay, but moderators need usable information.
 
+Reports should also feed platform integrity systems. A sudden spike in reports can trigger temporary distribution limits while review happens.
+
 ---
 
 # Notifications
@@ -435,6 +486,8 @@ Core notifications:
 Notifications should be grouped where possible.
 
 A creator should not receive fifty separate notifications if one post gets a burst of likes. Grouping makes the product calmer and more professional.
+
+Notifications should be configurable. Users should eventually control which notifications become push alerts, emails, or in-app-only events.
 
 ---
 
@@ -464,6 +517,8 @@ Later messaging can support:
 
 The initial messaging system should be safe before it is powerful. Open DMs without controls will create spam and abuse.
 
+Message requests are especially important. Users should be able to receive connection attempts without letting every stranger enter their main inbox.
+
 ---
 
 # Project applications
@@ -483,6 +538,8 @@ An application should include:
 Project owners should be able to review applications and respond.
 
 Applications should not feel like job applications unless the project requires that level of seriousness. The UX should be lightweight enough for creative collaboration.
+
+Applications are also a very strong discovery signal. If users apply to a project after seeing it, the platform has evidence that the recommendation produced meaningful intent.
 
 ---
 
@@ -515,6 +572,8 @@ Later search should become semantic and support queries like:
 
 Search should eventually connect strongly with skills, roles, interests, and project needs.
 
+Search results should be cleanly grouped by object type so users understand whether they found a person, post, project, or community.
+
 ---
 
 # Drafts
@@ -532,6 +591,8 @@ Draft support should include:
 Drafts are especially important for longer captions, project updates, and posts with multiple media items.
 
 The MVP can start with simple local or server-side drafts depending on architecture.
+
+Drafts should never accidentally publish. The transition from draft to published should be explicit.
 
 ---
 
@@ -553,6 +614,8 @@ Recommended approach:
 
 Comments should allow deletion. Editing comments can be added later.
 
+Deletion should remove public access quickly, even if backend retention exists temporarily for backups, safety, or abuse investigations.
+
 ---
 
 # Mentions
@@ -570,6 +633,8 @@ Feature requirements:
 - Prevent mention spam
 
 Mention spam can become a problem. Rate limits and notification controls are important.
+
+Mentions in project updates can be useful when crediting collaborators, but the same safety rules apply.
 
 ---
 
@@ -591,6 +656,8 @@ The MVP should support links carefully:
 - Rate limits for new accounts
 
 Links should not become a loophole for spam distribution.
+
+New accounts may need stricter link limits until they gain trust.
 
 ---
 
@@ -629,6 +696,8 @@ Shared pages should include:
 
 External sharing helps new users discover the platform without paid acquisition.
 
+Public pages should load quickly and look polished even for logged-out users.
+
 ---
 
 # Admin basics
@@ -649,6 +718,8 @@ Minimum admin abilities:
 - View message reports where policy allows
 
 Without admin tools, moderation becomes manual database work, which is fragile and unsafe.
+
+Admin actions should be logged. Any system that can remove content, restrict users, or view sensitive reports needs accountability.
 
 ---
 
