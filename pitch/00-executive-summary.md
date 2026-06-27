@@ -1,847 +1,457 @@
 # 00 — Executive Summary
 
-Version: 0.1  
-Status: Founder Draft  
-Owner: Elliot  
-Part: Company Foundation  
-Purpose: Define Discovr at the highest level before product, design, engineering, and business details are expanded.
+Discovr is a social platform built around a simple but difficult product promise: every eligible post receives a real opportunity to be discovered by the right audience.
+
+The product is intentionally familiar at the surface. Users open a feed, scroll, post, comment, follow, save, share, message, join communities, and create projects. The interface should not require people to relearn social media. The difference is the system underneath the feed. Discovr does not begin by asking whether a creator is already popular. It begins by asking who should see the post first.
+
+That distinction shapes the entire company.
+
+Most social platforms are excellent at amplifying what has already proven itself. They can take an account with momentum and make it larger. They can identify trends quickly, increase distribution for highly engaging posts, and keep users scrolling for long sessions. But they are much weaker at giving unknown creators a meaningful first audience. New posts from new accounts often receive little reach, not necessarily because they are bad, but because the platform has very little confidence about who should see them. Popularity becomes the safest proxy for quality.
+
+Discovr exists to replace that starting assumption.
+
+A post should not need an existing audience before it receives its first real test. A creator should not need fame before the platform learns whether their work is worth showing. A good idea should not disappear simply because it began from zero.
+
+The platform does not promise that every post will go viral. That would be dishonest and harmful. Some posts will be low quality, unsafe, repetitive, irrelevant, manipulative, or simply too narrow for broad distribution. Discovr’s promise is more precise: eligible content is tested with a relevant initial audience, measured through meaningful signals, and expanded in stages when the response justifies it.
+
+In practice, this means a new creator can publish a drum cover, app demo, robotics build, photograph, short film, essay, meme, project update, music clip, design concept, or startup idea and receive an actual chance to reach people who may care. The system should not treat all posts as equal forever, but it should treat them as worth testing before ignoring them.
+
+The core product belief is that discovery is not luck. Discovery is infrastructure.
 
 ---
 
-# 1. The shortest possible pitch
+# The product in one paragraph
 
-Discovr is a social platform where every post gets a real chance to be discovered.
-
-It has the familiar shape of modern social media: a scrolling feed, profiles, posts, comments, likes, saves, shares, messaging, communities, creator tools, subscriptions, and eventually ads.
-
-The difference is not that users must learn a strange new interface.
-
-The difference is the distribution system.
-
-Most platforms reward existing popularity. Discovr is built to give every post an initial opportunity before popularity decides its fate.
-
-The platform exists for creators, builders, students, musicians, developers, artists, founders, photographers, editors, designers, communities, and normal users who want to find people, content, and projects that actually matter to them.
-
-The promise is simple:
-
-> Publish something good, and Discovr will give it a fair shot.
+Discovr is a discovery-first social platform where users create and consume familiar post formats while the platform actively tests every eligible post with a relevant audience. Content that performs well expands through staged distribution waves. Content that does not expand still receives a fair test and understandable feedback. Beyond the feed, Discovr includes profiles, communities, messaging, creator analytics, and project pages that help users turn attention into meaningful connection and collaboration.
 
 ---
 
-# 2. The long-form pitch
+# The product category
 
-The internet has more content than ever, but discovery is still broken.
+Discovr sits between several existing product categories without fitting perfectly inside any single one.
 
-People post music, projects, art, edits, code, robotics builds, short films, photography, startup ideas, educational explainers, jokes, and personal updates every second. Most of this content disappears almost instantly because the creator does not already have an audience. The typical platform begins distribution by showing a post to a small slice of the creator's existing followers. If those followers react quickly enough, the platform may test it more widely. If not, the post dies.
+It has the feed behavior of a consumer social platform. It has the creator focus of a media platform. It has the interest structure of a community platform. It has the collaboration potential of a project network. It has the monetization potential of a creator economy platform. Over time, it can become a marketplace for talent, projects, audiences, communities, and creative work.
 
-That means the system is biased toward people who already have followers, already understand engagement tactics, already know how to package content, already have high production quality, or already have an audience trained to respond.
+The simplest category description is:
 
-This is not necessarily because platforms are evil. It is partly because platforms optimize for efficiency. A platform wants to maximize engagement, retention, ad impressions, session length, and revenue. Showing content from already proven accounts is safer than taking risks on unknown creators. The result is a loop where popularity creates more distribution, more distribution creates more popularity, and new creators face a cold-start wall.
+> A social discovery platform.
 
-Discovr is built around a different starting point.
+That phrase matters because Discovr is not only about social posting. It is about helping people and ideas get found.
 
-Instead of asking, "Who is already popular?" Discovr asks, "Who should this post be tested with first?"
-
-Every post receives an initial distribution test to a relevant audience. The platform measures deeper signals than likes: watch time, completion, saves, shares, meaningful comments, profile visits, follows, project joins, collaboration requests, community engagement, and whether the post helped a user discover something or someone valuable. If the post performs well, the system expands its reach in waves. If it does not perform well, it still received a fair chance and useful feedback.
-
-This approach makes the product familiar to use but different under the hood.
-
-Users still scroll.
-
-Creators still post.
-
-Communities still form.
-
-Messages still happen.
-
-But distribution is not locked behind fame.
-
-Discovr is not trying to be weird for the sake of being different. It is trying to fix the part of social media that quietly decides who gets seen.
+The early product should not over-explain itself to users. A user should not need to understand the category to enjoy the app. They should feel the difference through outcomes: posts get tested, new creators appear in the feed, projects receive applicants, communities grow, and users repeatedly discover people they would not have found elsewhere.
 
 ---
 
-# 3. What Discovr is
+# The core promise
 
-Discovr is a consumer social platform with a creator-first discovery engine.
+Every eligible post gets a real chance to be discovered.
 
-At launch, Discovr should be understood as a normal social media platform with these expected features:
+The promise has four important words.
 
-- A vertical scrolling feed
-- Image posts
-- Video posts
-- Text posts
-- Carousel posts
-- Profiles
-- Likes
-- Comments
-- Replies
-- Saves
-- Shares
-- Follows
-- Search
-- Notifications
-- Messaging
-- Hashtags or topics
-- Communities
-- Creator analytics
-- Reporting and moderation
-- Account settings
+**Eligible** means the post passes basic safety, spam, format, and account-quality checks. The platform cannot allow guaranteed distribution to become a spam engine. New accounts, suspicious behavior, unsafe uploads, duplicate posts, stolen content, and manipulative patterns must be handled carefully before distribution expands.
 
-As the product matures, Discovr expands into collaboration and creator economy features:
+**Real** means the test cannot be fake. A creator should not receive meaningless impressions from bots, inactive users, irrelevant audiences, or hidden placements. The initial audience must be large enough and relevant enough to produce useful signal.
 
-- Project pages
-- Roles needed
-- Applications to join projects
-- Collaboration badges
-- Creator portfolios
-- Paid memberships
-- Tips
-- Sponsored posts
-- Sponsored projects
-- Creator-brand matching
-- Business profiles
-- Advanced analytics
-- Premium subscriptions
-- Storage and upload tiers
-- AI-assisted discovery, captions, search, and moderation
+**Chance** means the platform gives opportunity, not guaranteed success. A post can fail its test. That is acceptable. The unfairness Discovr solves is not that every post fails to go viral; it is that many posts never get a proper first test at all.
 
-The platform should not feel like a complicated enterprise tool. It should feel as easy as opening Instagram, TikTok, YouTube Shorts, Reddit, or Twitter. The user should immediately understand how to consume, post, interact, and follow.
+**Discovered** means the platform is not only counting views. A view can be passive. Discovery implies that a user found something or someone worth remembering, saving, following, sharing, joining, messaging, or collaborating with.
 
-The new behavior should emerge from what the platform rewards.
+The full product standard is therefore:
 
-Discovr rewards discovery, not just attention.
+> Discovr gives eligible content a relevant initial audience, measures whether that audience found value in it, and expands distribution when the signals justify it.
 
 ---
 
-# 4. What Discovr is not
+# Why the product deserves to exist
 
-Discovr is not a clone with a new logo.
+A new social platform only deserves to exist if it changes something meaningful. A different color palette, new logo, or slightly altered interface is not enough. The internet does not need another feed unless that feed solves a real distribution problem.
 
-It should not exist just because social apps are popular.
+The current social internet has several structural issues:
 
-It should not become a worse Instagram, a worse TikTok, a worse YouTube, a worse Reddit, or a worse LinkedIn.
+1. New creators have weak access to first audiences.
+2. Existing popularity heavily influences future distribution.
+3. Platforms optimize for attention more easily than connection.
+4. Engagement metrics can reward outrage, repetition, and clickbait.
+5. Followers become a gatekeeping mechanism.
+6. Collaboration often happens outside the platforms where discovery begins.
+7. Creators receive little useful feedback when content fails.
+8. Users see too much content from already-proven accounts and too little from unknown but relevant creators.
 
-It is also not a platform that promises every post will become viral. That would be impossible, expensive, and dishonest. Not every post deserves massive reach. Some content is low quality, irrelevant, spammy, unsafe, repetitive, or simply not interesting to enough people.
+Discovr does not solve every problem in social media. It focuses on one central problem: distribution before popularity.
 
-The promise is not unlimited reach.
+That is enough to justify the product if executed well.
 
-The promise is fair initial opportunity.
+The market is crowded, but user frustration with existing platforms is real. Creators complain that reach is unpredictable. New accounts feel invisible. Small creators believe algorithms are stacked against them. Viewers often feel trapped in repetitive feeds. Communities struggle to attract members. Students and young builders create work that rarely travels beyond their immediate circles.
 
-Discovr is not saying:
-
-> Everyone will go viral.
-
-Discovr is saying:
-
-> Everyone gets tested properly before being ignored.
-
-That distinction matters.
-
-A platform that boosts every post endlessly would destroy feed quality and burn infrastructure money. Users would leave because the feed would become noisy. Creators would lose trust because the algorithm would feel random. Costs would rise faster than revenue. Moderation would become harder. Spam would be rewarded.
-
-Discovr must therefore balance fairness with quality.
-
-The platform should not be naive. It must protect users from spam, scams, low-effort uploads, manipulation, fake engagement, bot activity, harassment, and content that damages the experience.
-
-Fairness does not mean every post gets the same final outcome.
-
-Fairness means every post gets a meaningful first chance with the right people.
+Discovr’s opportunity is not to convince users that social media is bad. Users already understand that. The opportunity is to offer a more optimistic alternative: a platform where posting something good has a clearer path to being seen.
 
 ---
 
-# 5. The core problem
+# The distribution thesis
 
-The central problem Discovr solves is not content creation.
+Most platforms begin distribution from the social graph. A post is shown to followers, mutuals, subscribers, or a small sample of users connected to the creator. If the post performs strongly, the system expands it.
 
-People already have tools for creation. They can shoot videos on phones, edit photos, compose music, design graphics, write code, build robots, make websites, produce podcasts, record drums, make memes, write articles, and upload everything easily.
+This is efficient, but it creates a cold-start problem. A creator with few followers has fewer chances to generate the early signals needed for expansion. The platform may not have enough information about the creator or their audience. A weak initial sample can make a strong post appear weak.
 
-The harder problem is distribution.
+Discovr begins with the content and its likely audience.
 
-A creator can spend hours or days making something and still receive almost no meaningful reach because they do not already have followers. A talented musician can post a performance and get ignored. A student can build a robotics project and only their friends see it. A developer can launch a tool and disappear under louder accounts. A photographer can post great work and get buried. A new community can fail because no one discovers it.
+The system should classify the post, identify potential interest groups, estimate safety and quality, then distribute it into a controlled test audience. That audience may include followers, but it should not depend entirely on followers. The goal is to give the post an initial audience that is relevant enough to produce meaningful signal.
 
-Current platforms often turn distribution into a popularity contest.
+A staged distribution model can look like this:
 
-A creator's first obstacle is not quality. It is access to an audience.
+1. The post is uploaded.
+2. The system checks basic safety, spam, account trust, media validity, and policy risk.
+3. The content is classified by topic, format, language, media type, and likely interest clusters.
+4. The system selects a relevant test audience.
+5. The post receives an initial distribution wave.
+6. The system measures engagement quality, negative feedback, audience fit, and follow-through behavior.
+7. Strong posts expand into larger but still relevant waves.
+8. Posts with broader appeal cross into adjacent audiences.
+9. Posts with narrow appeal remain discoverable through search, profile, communities, and long-tail recommendations.
+10. Creators receive analytics that explain the outcome clearly enough to learn from it.
 
-This creates several problems:
+This model does not remove competition. It changes where competition begins.
 
-1. New creators quit early because they receive no signal.
-2. Existing creators feel forced to chase trends rather than create honestly.
-3. Users repeatedly see the same types of content from the same types of accounts.
-4. Platforms become optimized for engagement hacks instead of meaningful discovery.
-5. Followers become more important than the actual content.
-6. Connections remain shallow because the product is built around consumption more than collaboration.
-
-Discovr exists to break the first wall.
-
-A creator should not need fame to be tested.
-
-A post should not need an existing audience to receive its first audience.
+Instead of competing for attention only after building an audience, creators compete on how well their work resonates with the audience it was actually meant for.
 
 ---
 
-# 6. The core product thesis
+# What Discovr is not promising
 
-The thesis of Discovr is:
+Discovr should avoid vague or exaggerated claims. Trust is central to the platform, so the product language must be precise.
 
-> A social platform can feel familiar while using a fairer distribution model that gives every post a relevant initial audience, expands high-quality content in stages, and turns discovery into meaningful connection.
+Discovr is not promising equal outcomes.
 
-This thesis has several parts.
+Equal outcomes would mean every post receives the same reach regardless of quality, relevance, safety, originality, or audience response. That would make the feed worse and punish users who want relevance.
 
-## 6.1 Familiar interface
+Discovr is not promising virality.
 
-Users should not need a tutorial to understand Discovr.
+Virality depends on broad audience response. A platform can create opportunity, but it cannot force people to care. Pretending otherwise creates false expectations and damages trust.
 
-The platform should use common social patterns because they work:
+Discovr is not promising that algorithms will be perfectly fair.
 
-- Scroll to discover
-- Tap to like
-- Hold or menu to save/share/report
-- Comment below content
-- Visit profiles
-- Follow creators
-- Search topics
-- Open messages
-- Join communities
-- Create posts from a central button
+Any ranking system contains trade-offs. The goal is to make those trade-offs intentional, measurable, and aligned with the product promise.
 
-The product should not make users fight the interface. Innovation should be focused on the distribution engine, quality systems, collaboration features, and meaningful connection mechanics.
+Discovr is not promising that followers do not matter.
 
-## 6.2 Fair initial reach
+Followers should matter. They represent interest and relationship. The problem is not that followers influence distribution; the problem is when follower count becomes the main gate to opportunity.
 
-Every valid post should receive a baseline opportunity.
+Discovr is not promising that paid users will never have advantages.
 
-This does not mean showing every post to everyone. It means the platform should find a small but relevant test audience based on content topic, user interests, early creator signals, language, format, geography where appropriate, community context, and safety filters.
-
-A post about drums should be tested with people who care about music, percussion, live performance, covers, production, gear, or related communities.
-
-A post about VEX robotics should be tested with robotics students, engineering hobbyists, school STEM communities, programming users, competition users, and related project builders.
-
-A post about app development should be tested with developers, startup builders, designers, productivity tool fans, and people who interact with software projects.
-
-The first audience matters. A good post shown to the wrong people can look bad. A niche post shown to a generic audience can die unfairly. Discovr should avoid treating all reach as equal.
-
-## 6.3 Wave-based expansion
-
-Reach should expand in stages.
-
-A possible model:
-
-1. Safety and spam check
-2. Content classification
-3. Initial topic and audience match
-4. Small test audience
-5. Signal measurement
-6. Second wave expansion
-7. Larger topic expansion
-8. Cross-community testing
-9. Trending or recommended placement
-10. Long-tail search and profile distribution
-
-This creates a clear system where posts earn broader reach without being invisible at the start.
-
-## 6.4 Meaningful signals
-
-Likes are useful but shallow.
-
-Discovr should measure signals that imply actual value:
-
-- Watch time
-- Completion rate
-- Rewatch rate
-- Save rate
-- Share rate
-- Comment depth
-- Reply quality
-- Follow-through rate
-- Profile visit rate
-- Project join rate
-- Collaboration request rate
-- Community join rate
-- Search result click-through
-- Return engagement
-- Negative feedback
-- Report rate
-- Skip speed
-- Hide rate
-
-The algorithm should not blindly optimize for anger, shock, or cheap virality. A rage-bait post may produce comments, but those comments may not represent the kind of value Discovr wants.
-
-The platform should distinguish between attention and connection.
-
-## 6.5 Discovery to connection
-
-Discovr should not stop at views.
-
-The deeper purpose is to help people find people.
-
-A user should be able to discover a drummer, then follow them, message them, invite them to a project, join their community, attend an event, buy a digital product, support them, or collaborate.
-
-A user should be able to discover a project, then apply to join it.
-
-A user should be able to discover a community, then become an active participant.
-
-The product should turn passive scrolling into optional action.
-
-This is where Discovr can become more than entertainment.
+Paid plans may offer storage, analytics, customization, professional tools, collaboration features, media management, and business functionality. The important boundary is that payment should not quietly replace organic discovery. If paid distribution exists, it must be labeled and governed carefully.
 
 ---
 
-# 7. The main user groups
+# The product shape
 
-Discovr must serve multiple types of users without becoming confusing.
+The first version of Discovr should be straightforward.
 
-## 7.1 Normal viewers
+A user joins, chooses interests, creates a profile, opens a feed, posts content, interacts with other posts, and receives feedback when their own posts are tested. The app should feel quick, visual, and normal. There should be no heavy onboarding maze or abstract explanation of algorithms before the user can do anything.
 
-These users primarily consume content.
+The primary surfaces are:
 
-They want a good feed, interesting creators, funny posts, useful ideas, music, videos, images, recommendations, and communities. They may not think of themselves as creators.
+## Home feed
 
-For them, Discovr must be simple, fast, and entertaining.
+The main scrolling experience. It combines followed content, recommended content, new creator tests, community posts, project updates, and eventually sponsored content. The feed must feel alive without becoming random.
 
-If the feed is boring, the mission does not matter.
+## Discover
 
-Viewer needs:
+A more intentional exploration surface for topics, creators, communities, projects, trends, and search. Home is passive discovery. Discover is active discovery.
 
-- A strong feed
-- Easy onboarding
-- Fast loading
-- Relevant recommendations
-- Simple interactions
-- Good search
-- Safe browsing
-- Control over interests
-- Less repetitive content
-- Ability to save and revisit content
+## Create
 
-## 7.2 New creators
+The central creation flow for posts, media, captions, tags, project updates, and drafts. Creation must be fast enough for casual users but structured enough for serious creators.
 
-These are people with little or no audience.
+## Projects
 
-They are the emotional center of Discovr's mission.
+A first-class section for collaborative work. Projects allow users to create pages for things being built, list roles needed, post updates, accept applications, and form teams.
 
-They may be musicians, artists, students, editors, developers, comedians, educators, photographers, gamers, filmmakers, designers, writers, or builders.
+## Communities
 
-Their pain is not that they cannot post. Their pain is that posting feels pointless when nobody sees it.
+Interest-based spaces that provide context, identity, and recurring engagement. Communities help the algorithm understand user interests and help users find people around shared topics.
 
-New creator needs:
+## Messages
 
-- Guaranteed initial testing
-- Understandable analytics
-- Feedback on what happened
-- Profile growth
-- Content guidance without forcing trends
-- Tools to build identity
-- Community discovery
-- Collaboration opportunities
-- Hope that the platform is not rigged against them
+Private communication for relationships, collaborations, project applications, and normal social use. Messaging must include safety controls from the beginning.
 
-## 7.3 Serious creators
+## Profile
 
-These users already create consistently and may have audiences elsewhere.
-
-They need tools that justify cross-posting or moving attention to Discovr.
-
-Serious creator needs:
-
-- Better reach for good content
-- Analytics
-- Monetization
-- Audience ownership
-- Portfolio tools
-- Brand safety
-- Scheduling
-- Drafts
-- Media management
-- Community features
-- Paid options
-- Collaboration and hiring tools
-
-## 7.4 Builders and project owners
-
-These users are creating something beyond individual posts.
-
-Examples:
-
-- A band looking for members
-- A robotics team documenting a season
-- A student building an app
-- A startup founder finding designers
-- A game developer recruiting artists
-- A filmmaker assembling a crew
-- A photographer building a portfolio
-- A community organizer launching an event
-
-Their needs go beyond likes.
-
-Builder needs:
-
-- Project pages
-- Role listings
-- Applications
-- Member management
-- Updates
-- Milestones
-- Media showcase
-- Credibility signals
-- Collaboration chat
-- Discovery among relevant people
-
-## 7.5 Communities
-
-Communities organize interest.
-
-They may be based on topics, schools, locations, fandoms, skills, projects, creators, or industries.
-
-Community needs:
-
-- Member discovery
-- Moderation tools
-- Posts
-- Discussions
-- Events
-- Challenges
-- Roles
-- Rules
-- Analytics
-- Safe growth
-
-## 7.6 Businesses and brands
-
-Businesses become important later, especially for monetization.
-
-Their needs:
-
-- Brand profiles
-- Ads
-- Sponsored posts
-- Sponsored projects
-- Creator partnerships
-- Campaign analytics
-- Search visibility
-- Hiring and recruiting
-- Community sponsorship
-
-However, businesses should not dominate the early product. If Discovr becomes too commercial too early, it may lose trust with creators.
+A public identity layer that combines posts, projects, interests, skills, achievements, social links, and availability. The profile should work as both a social page and a lightweight portfolio.
 
 ---
 
-# 8. The product wedge
+# Why the interface should remain familiar
 
-A startup needs a wedge: a specific reason the first users care enough to join before the platform has everyone.
+Discovr should not overcomplicate the user experience just to appear innovative. Most people already understand the grammar of social apps. They know how feeds work. They know what likes and comments are. They know how to follow a creator. They know how to scroll.
 
-Discovr's broad vision is large, but the first wedge should be focused.
+The platform can use familiar interaction patterns because the innovation is not in making users learn a new shape. The innovation is in how content receives opportunity.
 
-Possible wedges:
+This has several advantages.
 
-## 8.1 Creator discovery wedge
+First, it reduces onboarding friction. A user can join and understand the product immediately.
 
-Position Discovr as the place where new creators actually get seen.
+Second, it makes the discovery promise easier to notice. If the interface is normal but outcomes are different, the user attributes the difference to the platform’s distribution system.
 
-This is emotionally strong and easy to explain.
+Third, it helps development focus. Building a social platform is already complex. Rebuilding basic interaction patterns from scratch creates unnecessary risk.
 
-Risk: Every platform claims to help creators. Discovr must prove it with transparent analytics and visible early reach.
+Fourth, it makes the product easier to explain. Discovr can be described as a normal social platform where posts get a fair discovery test. That is much clearer than a platform with unfamiliar behavior, unfamiliar objects, and unfamiliar navigation.
 
-## 8.2 Student and builder wedge
-
-Start with students building things: music, robotics, coding, design, school projects, competitions, startups, short films.
-
-This fits the Projects feature and meaningful connections.
-
-Risk: Too narrow if the app feels like a school productivity network instead of a social platform.
-
-## 8.3 Music and creative collaboration wedge
-
-Start with musicians, bands, editors, videographers, designers, and creators who need each other.
-
-This makes collaboration obvious.
-
-Risk: Could become perceived as only for music unless expanded carefully.
-
-## 8.4 Local discovery wedge
-
-Help people discover creators, projects, and communities near them.
-
-Risk: Local networks need density. If there are not enough users in a city, the experience feels empty.
-
-## 8.5 Best recommended wedge
-
-The best initial wedge is likely:
-
-> A discovery-first social platform for young creators and builders who want their work to be seen and want to find people to collaborate with.
-
-This includes music, robotics, coding, art, design, video, photography, startups, and school/community projects without forcing the platform into one niche.
-
-The early brand should feel creative, ambitious, and slightly rebellious against existing algorithm unfairness.
+Familiar does not mean generic. The design can still have its own personality, visual identity, motion language, and product tone. But the fundamental experience should not fight user expectations.
 
 ---
 
-# 9. Core differentiation
+# The role of Projects
 
-Discovr's differentiation should be understandable in one sentence, but defendable through systems.
+Projects are one of the most important differentiators after the discovery engine.
 
-## 9.1 Main difference
+A normal social platform helps people see content. Discovr should help people do something after seeing it.
 
-Every post gets a relevant initial audience.
+Projects are persistent pages for things users are building. They can represent creative work, school work, startups, music, robotics, software, film, design, events, clubs, open-source work, or anything that needs people, updates, and momentum.
 
-This is the emotional hook.
-
-## 9.2 System difference
-
-Distribution happens through staged tests rather than pure follower dependency.
-
-This is the algorithmic hook.
-
-## 9.3 Product difference
-
-Discovery leads into projects, collaboration, communities, and creator growth.
-
-This is the utility hook.
-
-## 9.4 Business difference
-
-Monetization should align with creator opportunity, not destroy it.
-
-This is the trust hook.
-
-## 9.5 Cultural difference
-
-Discovr should feel like a platform for people who are building, making, learning, performing, designing, creating, and trying.
-
-This is the brand hook.
-
----
-
-# 10. The feed promise
-
-The feed is the most important product surface.
-
-If the feed fails, Discovr fails.
-
-The feed must do three things at once:
-
-1. Keep users interested.
-2. Give creators a fair chance.
-3. Avoid becoming spammy, repetitive, or expensive.
-
-This is difficult because these goals can conflict.
-
-A feed that only optimizes user interest may favor already proven content.
-
-A feed that only optimizes fairness may show too much weak content.
-
-A feed that only optimizes cost may avoid testing enough new content.
-
-Discovr must design the feed as a balancing system.
-
-## 10.1 Initial boost does not mean infinite boost
-
-The platform should never say every post will reach thousands or millions of people no matter what.
-
-Instead:
-
-- Every eligible post gets classified.
-- Every eligible post gets a relevant test audience.
-- Every eligible post receives a fair measurement window.
-- Posts that perform well expand.
-- Posts that perform poorly stop expanding but remain searchable/profile-visible.
-- Creators receive feedback rather than silence.
-
-## 10.2 Relevance is part of fairness
-
-Showing a post to random people is not fair.
-
-A niche robotics post shown to random comedy viewers may fail even if it is excellent. A drum cover shown to people who never engage with music may appear weak. A startup post shown to users seeking memes may be skipped instantly.
-
-Fairness requires matching.
-
-The better the first match, the better the test.
-
-## 10.3 Feed health matters
-
-The feed must maintain a healthy mix:
-
-- Fresh posts
-- Proven posts
-- Small creator posts
-- Followed creator posts
-- Community posts
-- Local or relevant posts
-- Trending posts
-- Project updates
-- Ads, eventually, but controlled
-- Experiment slots
-
-The platform should reserve some feed inventory for discovery. This is where new posts get tested. The amount can change based on user behavior and feed maturity.
-
----
-
-# 11. Projects as a major section
-
-Projects should not be the entire app, but they should become one of Discovr's signature features.
-
-A normal social platform helps people see content.
-
-Discovr should help people do something after seeing it.
-
-Projects turn discovery into action.
-
-A Project is a living page for something being built.
-
-Examples:
-
-- A band creating an EP
-- A robotics team building a competition robot
-- A student founder building an app
-- A filmmaker looking for actors
-- A game developer recruiting artists
-- A designer building a clothing brand
-- A photographer organizing a shoot
-- A school club launching an event
-- An open-source project looking for contributors
-
-A Project can include:
+A project page can include:
 
 - Title
 - Description
-- Banner
 - Category
-- Location or remote status
+- Banner
+- Media
 - Owner
 - Members
 - Roles needed
-- Application form
+- Application flow
 - Updates
 - Milestones
-- Media
 - Links
-- Community discussion
+- Location or remote status
+- Community connection
 - Analytics
 - Follow button
-- Join/apply button
+- Join or apply button
 
-Projects help Discovr stand apart from pure entertainment platforms.
+The strategic value of Projects is that they turn discovery into collaboration. A user can discover a drummer and invite them to a band project. A programmer can discover a startup idea and apply to build it. A robotics team can document progress and attract teammates. A filmmaker can recruit editors, actors, or designers. A student can turn a school project into a public portfolio piece.
 
-They support the mission of meaningful connections.
+Projects also create stronger signals than ordinary engagement. A like is light. A save is stronger. A comment can be meaningful. A project application is very strong because it indicates intent.
 
-The platform should still work if someone never uses Projects. But for ambitious users, Projects should become the feature that makes Discovr feel different and valuable.
+Over time, Projects can become a major reason users return to Discovr even when they are not passively scrolling. This is important because feed-only products are vulnerable to becoming entertainment loops. Projects introduce utility.
 
 ---
 
-# 12. Communities
+# Communities and context
 
-Communities give structure to interest.
+Communities give Discovr structure.
 
-Without communities, Discovr relies entirely on the feed and profiles. That can work early, but communities create retention, identity, and context.
+A feed alone can feel endless and contextless. Communities create places where interests gather, norms develop, moderators shape quality, and users build identity beyond their profiles.
 
-Communities can exist around:
+Communities can be based on topics, locations, schools, creators, projects, skills, fandoms, industries, or scenes. Examples include drums, robotics, indie music, Mumbai creators, VEX teams, UI design, short films, startup builders, photographers, editing, fashion, coding, and gaming.
 
-- Music genres
-- Local scenes
-- Schools
-- Robotics
-- Coding
-- Photography
-- Filmmaking
-- Startups
-- Art
-- Fashion
-- Gaming
-- Editing
-- Fitness
-- Events
-- Creators
-- Projects
+Communities serve three product roles.
 
-Communities should not feel like old forums unless that format is useful. They should feel lightweight, social, and discoverable.
+First, they give users places to belong. A user who joins a robotics community is not just consuming robotics posts; they are becoming part of a robotics space.
 
-A community can have:
+Second, they improve recommendations. Community membership is a strong interest signal. It helps the platform test posts with better initial audiences.
 
-- Public feed
-- Discussion posts
+Third, they create moderation boundaries. Communities can have rules, moderators, roles, and quality expectations that differ from the global feed.
+
+The early version of Communities should be simple. It does not need to recreate every feature of Discord, Reddit, or Facebook Groups. It needs enough structure to help users gather around interests and help the discovery system understand context.
+
+---
+
+# Profiles as identity and portfolio
+
+A Discovr profile should be more useful than a basic social profile.
+
+It should answer several questions quickly:
+
+- Who is this person?
+- What do they create?
+- What are they interested in?
+- What are they building?
+- Are they open to collaboration?
+- What skills do they have?
+- What projects are they part of?
+- What work are they proud of?
+- How can others connect with them safely?
+
+For casual users, the profile can remain simple. For creators and builders, the profile becomes a lightweight portfolio and identity layer.
+
+Important profile elements include:
+
+- Username
+- Display name
+- Avatar
+- Bio
+- Location setting where appropriate
+- Interests
+- Skills
+- Social links
 - Featured posts
-- Events
-- Rules
-- Moderators
-- Roles
-- Challenges
-- Project links
-- Member directory
-- Trending creators
+- Featured projects
+- Communities
+- Collaboration status
+- Badges
+- Verification where needed
+- Creator analytics for the owner
 
-Communities also help the algorithm because they provide strong interest signals.
+Profiles should not become cluttered. The page must be simple at first glance and richer when explored.
 
-If a user joins a drum community, robotics community, and startup community, Discovr can understand what to test with them better than if it only watched generic likes.
+The profile is also part of the discovery engine. When a user follows someone after seeing a post, visits a profile, saves a project, or applies to collaborate, those actions help Discovr understand which discoveries are valuable.
 
 ---
 
-# 13. Monetization direction
+# Creator analytics
 
-Discovr needs a business model, but monetization should not break the discovery promise.
+Discovr cannot claim to give posts a fair chance and then leave creators guessing.
 
-The platform can monetize through several layers:
+Analytics are part of the trust system.
+
+Creators should understand the basic lifecycle of a post:
+
+1. The post was uploaded.
+2. The post passed or failed eligibility checks.
+3. The post was classified into topics or audiences.
+4. The post received an initial test.
+5. The post produced specific signals.
+6. The post expanded, held, or stopped expanding.
+7. The post continues to exist through profile, search, communities, and long-tail recommendations.
+
+The interface does not need to expose every algorithmic detail. In fact, exposing too much can encourage gaming. But it should show enough that the creator feels the system is real.
+
+Useful analytics include:
+
+- Initial test reach
+- Total reach
+- Watch time or read depth where relevant
+- Likes
+- Comments
+- Saves
+- Shares
+- Profile visits
+- Follows gained
+- Community joins caused by the post
+- Project follows or applications caused by the post
+- Audience interests
+- Negative feedback
+- Expansion stage
+
+The tone of analytics matters. A failed post should not feel like a punishment. It should feel like feedback. Discovr should avoid vague messages like “your post did badly.” Better language would explain that the initial audience did not show enough signal for wider expansion, while still making the post available through profile and search.
+
+---
+
+# Monetization direction
+
+Discovr needs a business model early because media platforms can become expensive. Storage, bandwidth, processing, moderation, search, recommendations, and notifications all create real costs.
+
+The monetization strategy should begin with tools and infrastructure value before relying heavily on ads.
+
+Possible revenue layers include:
 
 1. User subscriptions
-2. Creator subscriptions
-3. Storage and upload tiers
+2. Creator plans
+3. Storage and upload upgrades
 4. Advanced analytics
 5. Project tools
 6. Business profiles
-7. Ads
-8. Sponsored posts
-9. Sponsored projects
-10. Creator-brand marketplace
-11. Tips and memberships
-12. Transaction fees
+7. Paid communities
+8. Tips and memberships
+9. Transaction fees
+10. Sponsored posts
+11. Sponsored projects
+12. Search ads
+13. Creator-brand marketplace
 
-The key principle:
+The most important monetization boundary is trust.
 
-> Paid features may enhance workflow, analytics, storage, customization, and professional tools, but they should not turn Discovr into a pure pay-to-win discovery platform.
+Discovr cannot become a platform where users believe organic discovery is fake because reach is secretly sold to the highest bidder. Paid distribution may exist later, but it must be clearly labeled and separated from the core promise.
 
-This does not mean paid boosts can never exist. It means paid distribution must be clearly labeled, controlled, and separated from the fairness promise.
-
-A user should trust that organic discovery is still real.
-
-## 13.1 Free plan
-
-The free plan should be good enough for normal users and new creators.
-
-It should include:
-
-- Account creation
-- Posting
-- Basic uploads
-- Feed access
-- Profiles
-- Likes/comments/saves/shares
-- Basic analytics
-- Messaging with limits/safety
-- Project browsing
-- Basic project creation with limits
-- Community participation
-
-## 13.2 Premium plans
-
-Premium can include:
+A strong early subscription model could offer:
 
 - Higher upload limits
 - More storage
 - Advanced analytics
 - Profile customization
 - Project customization
-- Scheduling
-- Draft management
-- Better media tools
+- Drafts and scheduling
+- Media organization
 - AI captions or summaries
 - Collaboration tools
-- Portfolio features
 - Priority support
 
-## 13.3 Ads
+The free plan must remain useful. If the free plan is too limited, Discovr cannot credibly claim to support new creators. The paid plans should enhance serious use rather than block the basic discovery loop.
 
-Ads can exist, but they must be native and controlled.
+---
 
-Possible ad types:
+# Advertising direction
+
+Advertising is likely necessary at scale, but it should be introduced carefully.
+
+Ads should be native, clearly labeled, relevant, and controlled. The platform should avoid intrusive formats that make the feed feel cheap or hostile.
+
+Possible ad formats include:
 
 - Sponsored feed posts
 - Sponsored search results
 - Sponsored projects
 - Sponsored communities
-- Creator-brand campaigns
-- Event promotions
-- Marketplace promotions
+- Event promotion
+- Brand collaboration campaigns
+- Creator sponsorship marketplace placements
 
-Ads should be clearly labeled. They should not impersonate organic discovery.
+The most interesting ad format for Discovr may be sponsored projects. A company, school, creator, or event organizer could promote an opportunity, challenge, collaboration, competition, or campaign. This fits the platform better than generic display advertising.
+
+Ad targeting should respect privacy. The platform should not need invasive surveillance to deliver useful ads. Interest, community, content category, geography where appropriate, and user-provided business intent can be enough for early versions.
+
+Users should have controls. Advertisers should have quality requirements. Sponsored content should not be allowed to exploit the discovery promise by pretending to be organic reach.
 
 ---
 
-# 14. Infrastructure direction
+# Infrastructure direction
 
-Discovr is media-heavy.
+Discovr is a media-heavy product. The technical architecture must account for that from the beginning.
 
-That means storage, bandwidth, processing, and delivery costs matter from day one.
+A reasonable early stack is:
 
-A likely early stack:
+- Next.js or a similar React framework for the web application
+- Supabase for authentication, Postgres, early APIs, realtime features, and admin workflows
+- Cloudflare R2 for object storage
+- Cloudflare CDN for delivery
+- Cloudflare Workers for edge logic where useful
+- A queue system for media processing and background jobs
+- Redis or an equivalent cache once the feed and recommendation systems require it
+- A search system for users, posts, projects, and communities
+- Observability for logs, errors, uptime, latency, and cost tracking
 
-- Frontend: Next.js or similar React framework
-- Styling: Tailwind or a comparable design system approach
-- Backend: Supabase for authentication, database, and early APIs
-- Database: Postgres
-- Object storage: Cloudflare R2 for media
-- CDN: Cloudflare
-- Edge logic: Cloudflare Workers where useful
-- Queues: managed queue or worker-based queue system
-- Cache: Redis or managed equivalent once needed
-- Analytics: privacy-conscious event tracking
-- Monitoring: logs, errors, uptime, performance metrics
+The architecture should be built around media lifecycle management. Uploads should not be treated as simple files that live forever with no policy.
 
-Supabase storage alone may become limiting or expensive for media-heavy usage. R2 is attractive because it can store large amounts of media with predictable pricing and no egress fees in many common Cloudflare delivery scenarios.
+A media asset may need:
 
-However, storage is not the only cost.
-
-The platform must also consider:
-
-- Upload operations
-- Download/read operations
-- Transformations
+- Original file storage
+- Processed feed versions
 - Thumbnails
-- Video transcoding
-- Moderation scans
-- CDN cache misses
-- Database reads/writes
-- Realtime messaging
-- Notification delivery
-- Search indexing
-- Backups
-- Logs
+- Preview clips
+- Blurhash or placeholder data
+- Metadata
+- Moderation status
+- Ownership references
+- Retention policy
+- Deletion state
+- Access rules
 
-The architecture must avoid assuming that storage is the only scaling problem.
+Storage cost is only one part of the equation. Reads, writes, transformations, CDN cache misses, database events, search indexing, and moderation scans also matter.
 
-## 14.1 Media lifecycle
-
-Media should have lifecycle rules.
-
-Not every uploaded file should live forever in expensive hot storage.
-
-Possible lifecycle model:
-
-- Original upload stored temporarily or permanently depending on user plan
-- Processed versions generated for feed delivery
-- Thumbnails stored separately
-- Unused drafts purged after a window
-- Deleted posts soft-deleted first, then purged later
-- Low-value or abandoned media archived or removed based on policy
-- Premium users may receive longer retention or higher quality storage
-
-The product must define retention clearly so users understand what happens to their uploads.
-
-## 14.2 Data ownership
-
-Discovr should treat user trust seriously.
-
-Users should be able to understand:
-
-- What they uploaded
-- What is public
-- What is private
-- What is used for recommendations
-- What can be deleted
-- What remains in backups temporarily
-- What data can be exported later
-
-This matters especially if the platform serves young creators and students.
+The platform should avoid building a cost structure where every user action becomes expensive. The product promise requires initial distribution, so infrastructure must make testing content efficient.
 
 ---
 
-# 15. Data strategy
+# Data strategy
 
-Discovr's data model must support social interactions, media, recommendations, collaboration, monetization, and moderation.
+Discovr should treat product events as first-class data.
 
-Core entities likely include:
+The feed and discovery systems need more than tables for users and posts. They need structured signals that explain what happened after content was shown.
+
+Core entities include:
 
 - Users
 - Profiles
-- Sessions
 - Posts
 - Media assets
 - Comments
@@ -851,14 +461,13 @@ Core entities likely include:
 - Follows
 - Blocks
 - Reports
-- Notifications
-- Messages
 - Communities
 - Community memberships
 - Projects
-- Project roles
+- Project members
 - Project applications
-- Project updates
+- Messages
+- Notifications
 - Subscriptions
 - Payments
 - Ads
@@ -867,506 +476,377 @@ Core entities likely include:
 - Recommendation events
 - Moderation actions
 
-The database must be designed for both product correctness and algorithmic learning.
+The recommendation system needs event quality, not just event volume. A thousand accidental views are less useful than a smaller number of saves, follows, shares, applications, and meaningful comments.
 
-A like is not just a UI event. It is a signal.
+Data collection should be purposeful. The platform should not collect sensitive data just because it might be useful later. Every event should have a reason tied to product quality, safety, analytics, billing, or system reliability.
 
-A skip is a signal.
-
-A save is a signal.
-
-A report is a signal.
-
-A project application is a very strong signal.
-
-A follow after seeing a post is a strong signal.
-
-The system should capture events in a way that can later train ranking, search, recommendations, creator analytics, and moderation.
-
-However, collecting everything without discipline creates privacy risk, database bloat, and analysis chaos.
-
-Discovr should define event categories early:
-
-- Product events
-- Engagement events
-- Recommendation events
-- Safety events
-- Billing events
-- System events
-
-Each event should have a purpose.
+The data model must also support deletion, privacy controls, reporting, moderation, and future exports. These are not optional cleanup tasks. They are trust requirements.
 
 ---
 
-# 16. Trust and safety direction
+# Trust and safety
 
-Any social platform must assume abuse will happen.
+A platform that gives every post an initial audience must be especially careful about abuse.
 
-Discovr cannot wait until scale to think about moderation.
+Guaranteed initial testing creates an incentive for spam. If bad actors can create unlimited accounts and receive guaranteed distribution, the system becomes a growth channel for scams, harassment, low-quality reposts, and manipulation.
 
-Risks include:
+Trust and safety must be part of the distribution system.
 
-- Spam accounts
-- Fake engagement
-- Bot views
-- Stolen content
-- Harassment
-- Impersonation
-- Scams
-- Unsafe messages
-- Malicious links
-- Inappropriate media
-- Manipulated projects
-- Ad abuse
-- Report brigading
-- Ban evasion
+Before a post receives meaningful reach, the platform should consider:
 
-Trust and safety should be part of the architecture, not an afterthought.
-
-Minimum systems:
-
-- Report flow
-- Block flow
-- Mute flow
-- Account restrictions
-- Content takedown
-- Appeal flow
-- Admin review tools
-- Automated spam scoring
+- Account age
+- Account verification state
+- Upload history
+- Report history
+- Duplicate content patterns
+- Link risk
+- Media risk
+- Spam indicators
+- Bot-like activity
 - Rate limits
-- Upload limits
-- Message request controls
-- Sensitive content controls
-- Community moderation roles
+- Community rules
+- User blocks and safety settings
 
-The platform should avoid overpromising perfect moderation. Instead, it should build clear systems and improve them over time.
+The product should include basic user controls from the beginning:
 
-Safety is also important for the discovery promise. If every post gets an initial boost, spam and abuse prevention must happen before or during distribution. Otherwise, the boost system becomes a spam amplifier.
-
----
-
-# 17. Why Discovr can win
-
-Discovr can win if it becomes known for one thing first:
-
-> This is where new creators actually get seen.
-
-That idea is simple and emotionally powerful.
-
-But the platform cannot survive on a slogan. It needs product proof.
-
-Discovr must show users:
-
-- Their posts reached real people.
-- The audience was relevant.
-- The analytics make sense.
-- Good posts can grow without existing fame.
-- The feed is still enjoyable.
-- Connections can turn into collaboration.
-- The platform is not secretly pay-to-win.
-
-If users feel that Discovr gives them a fairer shot than Instagram, TikTok, YouTube, Reddit, or X, they will have a reason to cross-post.
-
-Cross-posting is important. Early users may not abandon existing platforms. They may post to Discovr in addition to them.
-
-The product should make that easy.
-
-Early growth does not require replacing Instagram. It requires becoming the place creators also post because the upside is discovery.
-
----
-
-# 18. Competitive landscape
-
-Discovr sits near multiple categories:
-
-- Instagram: social graph, images, reels, creators
-- TikTok: short-form algorithmic discovery
-- YouTube: video, creators, monetization, search
-- Reddit: communities and interest graphs
-- X/Twitter: public posting and fast discovery
-- LinkedIn: professional identity and opportunities
-- Discord: community communication
-- Behance/Dribbble: portfolios
-- GitHub: projects and code collaboration
-- Product Hunt: launch discovery
-
-Discovr should not try to beat all of them at once.
-
-Instead, it should combine three ideas:
-
-1. The ease of a normal social feed
-2. The fairness of guaranteed initial discovery
-3. The usefulness of projects and meaningful connections
-
-The danger is becoming too broad too early.
-
-The product should begin with a focused MVP:
-
-- Accounts
-- Profiles
-- Posting
-- Feed
-- Initial boost logic
-- Likes/comments/saves/shares
-- Basic search
-- Basic projects
-- Basic messaging or message requests
-- Basic analytics
-- Reporting/blocking
-
-Everything else can expand after the core loop works.
-
----
-
-# 19. The core loop
-
-The core loop is the repeated behavior that makes the product grow.
-
-For Discovr, the primary creator loop is:
-
-1. Creator posts content.
-2. Discovr tests it with a relevant audience.
-3. Creator receives reach and analytics.
-4. Some viewers engage, follow, save, comment, message, or collaborate.
-5. Creator feels the platform gave them a chance.
-6. Creator posts again.
-
-The primary viewer loop is:
-
-1. Viewer opens feed.
-2. Viewer sees interesting content from both known and unknown creators.
-3. Viewer interacts with content.
-4. Algorithm learns interests.
-5. Viewer discovers creators, communities, and projects.
-6. Viewer returns because the feed feels fresh and useful.
-
-The primary project loop is:
-
-1. User creates a project.
-2. Project is shown to relevant people.
-3. People follow or apply.
-4. Project owner accepts collaborators.
-5. Project posts updates.
-6. Updates drive more discovery.
-7. The project becomes proof that Discovr creates meaningful connections.
-
-The platform must make these loops feel natural.
-
----
-
-# 20. MVP definition
-
-The first version of Discovr does not need every future feature.
-
-It needs to prove the core thesis.
-
-A strong MVP should include:
-
-## 20.1 User accounts
-
-- Sign up
-- Log in
-- Profile creation
-- Username
-- Avatar
-- Bio
-- Interests
-
-## 20.2 Posting
-
-- Create text posts
-- Upload image posts
-- Upload short video posts if storage and processing are ready
-- Add captions
-- Add topics/tags
-- Delete posts
-- Edit captions where appropriate
-
-## 20.3 Feed
-
-- Main scrolling feed
-- Basic ranking
-- Fresh content injection
-- Initial boost slots
-- Followed creator content
-- Interest-based content
-
-## 20.4 Engagement
-
-- Like
-- Comment
-- Save
-- Share link
-- Follow
-- Profile visit
-
-## 20.5 Creator analytics
-
-At minimum:
-
-- Views
-- Likes
-- Comments
-- Saves
-- Shares
-- Profile visits
-- Follows gained from post
-- Initial test status
-- Expansion status
-
-Analytics should be understandable. A creator should know whether the post was tested, how it performed, and why it did or did not expand.
-
-## 20.6 Projects MVP
-
-- Create a project
-- Add title, description, category, banner
-- Add roles needed
-- Follow project
-- Apply to project
-- Post project updates
-
-## 20.7 Safety MVP
-
-- Report post
-- Block user
+- Report
+- Block
+- Mute
 - Delete own content
-- Basic admin moderation
-- Rate limits
-- Upload limits
+- Hide post
+- Control message requests
+- Restrict interactions where needed
 
-This MVP is already large. It should be built carefully rather than overloaded with every idea.
+Moderation tooling should exist early, even if it is simple. Admins need to review reports, remove content, restrict accounts, see relevant context, and handle appeals.
 
----
-
-# 21. Product principles
-
-These principles should guide decisions.
-
-## 21.1 Familiar first, different underneath
-
-Do not make users learn a strange product unless the payoff is huge.
-
-The social interface can be familiar. The algorithm and connection model should be different.
-
-## 21.2 Every post gets a chance, not a trophy
-
-The platform should be fair, not fake.
-
-Bad content should not be forced onto everyone. Good content from unknown creators should not be buried.
-
-## 21.3 Relevance is respect
-
-Users should not be used as random test subjects for irrelevant content.
-
-The better the matching, the better the experience for both creators and viewers.
-
-## 21.4 Meaningful signals beat vanity metrics
-
-Likes matter, but they are not enough.
-
-The system should value saves, shares, comments, follows, project joins, and long-term engagement.
-
-## 21.5 Creators need feedback
-
-Silence is brutal.
-
-If a post fails, creators should still understand what happened at a high level.
-
-## 21.6 Monetization must not destroy trust
-
-Paid features should support creators and fund infrastructure without making organic discovery feel fake.
-
-## 21.7 Build for scale, launch with focus
-
-The architecture should not be careless, but the MVP should not attempt to be the final universe.
+Safety is not separate from growth. A discovery platform that feels unsafe will not retain users, creators, advertisers, or communities.
 
 ---
 
-# 22. Early metrics
+# The MVP
 
-Discovr should track metrics that prove the mission.
+The first version should prove the discovery thesis before trying to become a complete social universe.
 
-Common social metrics:
+A focused MVP includes:
+
+## Accounts and profiles
+
+Users can sign up, log in, choose a username, create a profile, add a bio, select interests, and publish basic identity information.
+
+## Posting
+
+Users can create posts with text, images, and eventually short video. Posts can include captions, topics, and visibility settings.
+
+## Feed
+
+Users can scroll a main feed that mixes followed posts, recommended posts, and initial discovery tests. The feed does not need a perfect algorithm at launch, but it must visibly support new creator discovery.
+
+## Engagement
+
+Users can like, comment, save, share, follow, and visit profiles. These actions generate signals for the discovery system.
+
+## Initial discovery testing
+
+Eligible posts receive a measurable first distribution wave. The system records reach and engagement so creators can see that testing happened.
+
+## Analytics
+
+Creators can see basic post analytics: reach, engagement, saves, shares, comments, profile visits, follows gained, and expansion state.
+
+## Projects
+
+Users can create basic project pages, list roles needed, post updates, follow projects, and apply to join.
+
+## Communities
+
+Users can join simple communities around interests. Community membership helps personalize discovery.
+
+## Safety
+
+Users can report, block, hide, and control basic interactions. Admins can review reported content.
+
+This MVP is already ambitious. It should not include every future monetization feature, complex ads, enterprise tools, advanced AI assistants, live streaming, or deep video editing unless the core loop is working.
+
+---
+
+# Success metrics
+
+Discovr should measure success in a way that protects the mission.
+
+Standard growth metrics matter:
 
 - Daily active users
 - Monthly active users
 - Retention
-- Session length
+- Session frequency
 - Posts created
-- Likes
 - Comments
+- Saves
 - Shares
 - Follows
+- Messages
+- Community joins
+- Project applications
 
-Mission-specific metrics:
+But the platform also needs mission-specific metrics:
 
-- Percentage of posts receiving initial test audience
-- Median initial reach per eligible post
+- Percentage of eligible posts receiving initial tests
+- Median initial reach per post
 - Percentage of new creators receiving non-follower reach
 - New creator return rate after first post
-- Posts expanded beyond initial wave
-- Saves per reach
-- Follows gained per post
-- Project applications from discovery
-- Community joins from feed
-- Creator satisfaction score
+- Share of feed impressions allocated to discovery tests
+- Expansion rate from first wave to second wave
+- Save rate from initial audiences
+- Follow rate from discovered posts
+- Project application rate from discovery surfaces
+- User-rated relevance of recommended posts
+- Hide/report rate on discovery-tested posts
 - Feed freshness score
-- Relevance rating
+- Creator trust score
 
-If Discovr only measures normal social metrics, it may drift into becoming a normal social platform.
-
-Mission metrics protect the product from losing its identity.
+If Discovr only optimizes for session length, it will eventually behave like every other feed. Mission-specific metrics help prevent drift.
 
 ---
 
-# 23. Major risks
+# Competitive position
 
-## 23.1 Feed quality risk
+Discovr does not need to defeat every social platform directly. It needs to create a reason to post and browse that existing platforms do not serve well enough.
 
-If every post gets tested but matching is weak, users may see low-quality or irrelevant content.
+Instagram is strong at identity, visual posts, social following, and creators with existing audiences.
 
-Mitigation:
+TikTok is strong at short-form algorithmic entertainment.
 
-- Strong onboarding interests
-- Topic classification
-- User feedback controls
-- Spam filters
-- Small test audiences
-- Quality thresholds
+YouTube is strong at long-form video, search, creator monetization, and durable libraries.
 
-## 23.2 Cost risk
+Reddit is strong at communities and topic-based discussion.
 
-Media storage and delivery can become expensive.
+Discord is strong at private community communication.
 
-Mitigation:
+LinkedIn is strong at professional identity and career signaling.
 
-- R2 or similar object storage
-- Compression
-- Transcoding rules
-- Upload limits
-- Lifecycle policies
-- CDN caching
-- Paid storage tiers
+GitHub is strong at code collaboration.
 
-## 23.3 Spam risk
+Behance and Dribbble are strong at creative portfolios.
 
-A guaranteed boost can attract spammers.
+Product Hunt is strong at launches.
 
-Mitigation:
+Discovr’s position is not to replace all of them immediately. Its position is to combine familiar social behavior with fairer initial distribution and collaboration pathways.
 
-- Account trust scores
-- Rate limits
-- New account restrictions
-- Duplicate detection
-- Bot detection
-- Report weighting
-- Pre-distribution checks
+The early competitive message is:
 
-## 23.4 Trust risk
+> Post where you already post, but post on Discovr if you want a real discovery test.
 
-If users believe the algorithm is unfair, the brand promise collapses.
-
-Mitigation:
-
-- Transparent analytics
-- Clear explanation of initial tests
-- Avoid fake numbers
-- Avoid secret pay-to-win mechanics
-- Publish high-level ranking principles
-
-## 23.5 Scope risk
-
-The vision is huge and can become overwhelming.
-
-Mitigation:
-
-- Build MVP around feed, posting, discovery, profiles, analytics, and basic projects
-- Delay advanced monetization
-- Delay complex ads
-- Delay enterprise features
-- Keep chapter decisions organized
+That is a realistic adoption path. Users do not need to abandon existing networks on day one. They need a reason to add Discovr to their workflow.
 
 ---
 
-# 24. Founder assumptions
+# Strategic risks
 
-This chapter makes several assumptions that future chapters must validate or revise.
+## Feed quality
 
-1. Users already understand normal social platform interfaces.
-2. The main differentiation should be distribution, not radically new UI.
-3. Every post should receive a fair initial test, but not unlimited reach.
-4. Relevance is required for fairness.
-5. Projects should be a major section but not the entire platform.
-6. Monetization should begin with subscriptions/storage/tools before aggressive ads.
-7. Cloudflare R2 or similar object storage is likely better than relying only on Supabase storage for media.
-8. Analytics must be part of the creator promise from the start.
-9. Trust and safety must be built before scale.
-10. The MVP must prove discovery before expanding into every possible feature.
+If the feed becomes noisy, users will leave regardless of the mission. Discovery slots must be relevant, controlled, and measured.
 
-These assumptions are not permanent laws. They are the current foundation.
+## Cost growth
 
-If evidence proves one wrong, the Bible should be updated.
+Media-heavy products can become expensive quickly. Storage, bandwidth, processing, search, and moderation must be tracked from the start.
 
----
+## Spam exploitation
 
-# 25. The final vision
+The initial test system can attract abuse. Account trust, rate limits, duplicate detection, and safety checks must be integrated early.
 
-In the long term, Discovr can become more than a social app.
+## Trust erosion
 
-It can become a discovery layer for people and projects.
+If users believe the platform is secretly pay-to-win, randomly ranking content, inflating metrics, or hiding distribution rules, the core brand collapses.
 
-A musician finds a vocalist.
+## Scope creep
 
-A robotics student finds a programmer.
+The product vision includes feed, projects, communities, messaging, analytics, monetization, ads, AI, and infrastructure. Building everything at once would create chaos. The MVP must stay focused.
 
-A designer finds a startup.
+## Cold-start marketplace problem
 
-A photographer finds a model.
-
-A filmmaker finds an editor.
-
-A small creator finds an audience.
-
-A community finds its first members.
-
-A project finds contributors.
-
-A user finds something they did not know they cared about.
-
-The platform starts with a feed because that is how people browse.
-
-But the deeper ambition is connection.
-
-Discovr should help people get seen, find each other, and build things that would not have happened otherwise.
-
-That is the company.
-
-That is the product.
-
-That is the promise.
+A social platform needs both creators and viewers. Projects need both project owners and applicants. Communities need both members and activity. Early growth must focus on niches where density is achievable.
 
 ---
 
-# 26. Chapter summary
+# Strategic advantages
 
-Discovr is a familiar social platform with a different discovery philosophy.
+Discovr has several potential advantages if built with discipline.
 
-The platform's core promise is that every eligible post receives a meaningful initial opportunity with a relevant audience. Posts that perform well expand in waves. Posts that do not perform well still receive a fair test and feedback.
+## Clear emotional promise
 
-The product should feel normal enough for users to understand immediately, but different enough underneath to create a new kind of creator trust.
+New creators understand the pain of posting into silence. “Every post gets a real chance” is simple, memorable, and emotionally strong.
 
-The most important features are the feed, posting, profiles, analytics, projects, communities, messaging, monetization, and safety systems.
+## Familiar usage pattern
 
-The most important technical concerns are media storage, distribution cost, data modeling, recommendation quality, moderation, spam prevention, and scalability.
+The app does not require users to learn a new behavior before feeling value. The feed is familiar.
 
-The most important business concern is trust. If Discovr becomes pay-to-win, spammy, boring, or confusing, it loses its reason to exist.
+## Differentiated algorithmic identity
 
-The next chapters expand the foundation:
+The platform can be known for distribution fairness rather than only content consumption.
 
-- Chapter 01 explains the problem in depth.
-- Chapter 02 defines the vision and philosophy.
-- Chapter 03 turns the idea into a product model.
-- Chapter 06 defines the discovery engine in detail.
-- Chapter 08 defines Projects as the collaboration layer.
+## Collaboration layer
 
-This executive summary should be treated as the north star for the rest of the Bible.
+Projects create utility beyond entertainment and make the platform useful for builders, students, creators, and teams.
+
+## Strong signal design
+
+Project applications, saves, follows, community joins, and collaboration requests provide deeper signals than likes alone.
+
+## Monetization options
+
+Subscriptions, storage, analytics, project tools, creator economy features, and ads create multiple revenue paths.
+
+---
+
+# The early wedge
+
+The best early audience is likely young creators and builders who are already making things but do not have reliable distribution.
+
+This includes:
+
+- Musicians
+- Bands
+- Student creators
+- Robotics teams
+- Developers
+- Designers
+- Photographers
+- Editors
+- Filmmakers
+- Startup builders
+- School clubs
+- Community organizers
+
+This audience is useful because they have content, ambition, collaboration needs, and frustration with existing platforms. They also naturally understand Projects.
+
+The early brand should feel energetic, creative, and serious about opportunity. It should not feel like corporate productivity software. It should also not feel like a gimmick app that only exists for a trend.
+
+Discovr should feel like a place where people are building, posting, finding, joining, and becoming known.
+
+---
+
+# The core loop
+
+The product succeeds if its loops repeat naturally.
+
+## Creator loop
+
+A creator posts. Discovr tests the post with a relevant audience. The creator receives reach, engagement, and understandable analytics. Some viewers follow, save, comment, share, message, or join a project. The creator believes posting was worth it and posts again.
+
+## Viewer loop
+
+A viewer opens the feed. They see a mix of creators they know and creators they would not have found elsewhere. They interact with relevant content. The platform learns their interests. The feed improves. The viewer returns.
+
+## Project loop
+
+A user creates a project. The project is discovered by relevant people. People follow or apply. The owner accepts collaborators. The project posts updates. Updates drive more discovery. The project becomes proof that Discovr creates meaningful connections.
+
+## Community loop
+
+A user joins a community. The community gives context to posts and people. Members interact. The feed learns from community interest. Community activity produces more content and discovery.
+
+---
+
+# Product principles
+
+## Familiar interface, different distribution
+
+Users should not fight the product to understand it. The distribution model is where the platform should feel different.
+
+## Opportunity before popularity
+
+Existing popularity can influence reach, but it should not be the only way to receive opportunity.
+
+## Relevance is part of fairness
+
+A post has not received a fair test if it was shown to the wrong audience.
+
+## Meaningful signals matter more than vanity metrics
+
+Likes are useful but insufficient. Saves, shares, follows, project joins, applications, comments, and retention quality are stronger indicators of value.
+
+## Creators deserve feedback
+
+A creator should not be left wondering whether a post failed, was never tested, or was shown to the wrong people.
+
+## Monetization must preserve trust
+
+Paid features should support the product without making organic discovery feel fake.
+
+## Safety must precede scale
+
+A guaranteed testing system without abuse prevention becomes a spam amplifier.
+
+## Build the core loop before the universe
+
+The first version must prove discovery. Everything else should support that goal or wait.
+
+---
+
+# Near-term product decisions
+
+Several decisions are already clear enough to guide development.
+
+1. Discovr should use a familiar feed-based interface.
+2. The product should focus on discovery as the main differentiator.
+3. Every eligible post should receive an initial test audience.
+4. Initial reach should be relevant, not random.
+5. Expansion should happen in waves based on meaningful signals.
+6. Projects should be a major section, not the entire product.
+7. Communities should support interest, retention, and recommendation quality.
+8. Profiles should function as identity and lightweight portfolios.
+9. Creator analytics should be part of the first serious version.
+10. Monetization should begin with subscriptions, storage, analytics, and tools before aggressive ads.
+11. Paid distribution, if added, must be labeled and controlled.
+12. Infrastructure should assume media costs from the beginning.
+13. Safety systems must be integrated before broad distribution is scaled.
+
+---
+
+# What remains open
+
+Some decisions should remain open until deeper chapters define them.
+
+- Exact initial test audience size
+- Whether initial reach should be guaranteed numerically or described qualitatively
+- Whether users can see the exact stage of distribution
+- How much algorithmic transparency is useful before it encourages gaming
+- Whether paid boosts are allowed at all
+- How Projects should rank in the main feed
+- Whether Communities should launch in the MVP or shortly after
+- Which media formats launch first
+- How strict upload limits should be on the free plan
+- Which recommendation signals are included in version one
+- Whether direct messaging launches immediately or after trust systems mature
+- How location should be used without feeling invasive
+- How young users and school communities should be handled safely
+
+These questions are not weaknesses. They are decisions that need dedicated analysis.
+
+---
+
+# Long-term vision
+
+The long-term vision is for Discovr to become a discovery layer for people, content, projects, and communities.
+
+A musician should be able to find collaborators.
+
+A robotics student should be able to show work beyond their school.
+
+A developer should be able to launch a project and attract users or teammates.
+
+A photographer should be able to build a portfolio and find opportunities.
+
+A filmmaker should be able to recruit a crew.
+
+A community should be able to find its first members.
+
+A viewer should be able to open the app and consistently find creators they would not have discovered elsewhere.
+
+A post should not disappear simply because it started from zero.
+
+The product begins as a feed because feeds are how people browse. It becomes more valuable when discovery leads to relationships, collaboration, communities, and work that exists beyond the feed.
+
+Discovr’s strongest version is not just a place to scroll.
+
+It is a place where people get found.
